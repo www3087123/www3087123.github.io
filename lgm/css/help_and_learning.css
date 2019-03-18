@@ -1,0 +1,272 @@
+header{
+    background: url(../images/help_and_learning/help.png) no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+header span{
+	display: block;
+    color: #ffffff;
+    font-weight: bold;
+    width: 70px;
+    margin: auto;
+}
+header input{
+    width: 50%;
+    border-radius: 30px;
+    line-height: 2.8em;
+    padding-left: 65px;
+    padding-top: 5px;
+    border: 0;
+    outline: none;
+    font-size: 0.85rem;
+    color: #bdbdbd;
+    background-image: url(../images/help_and_learning/sousuo.png);
+    background-repeat: no-repeat;
+    background-size: 4%;
+    background-position: 5%;
+}
+.input{
+	text-align: center;
+    padding-top: 25%;
+    padding-bottom: 5%;
+	}
+/* 必要布局样式css */
+
+
+.main{
+	padding-top: 70px;
+}
+.solution-header {
+    max-width: 1210px;
+    padding: 50px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.solution-list {
+    width: 300px;
+    float: left;
+}
+
+.solution-list ul li {
+    padding-left: 30px;
+    margin: 0 10px;
+    position: relative;
+    line-height: 4em;
+    color: #666;
+}
+
+.solution-list ul li span {
+    font-size: 18px;
+    line-height: 3.5;
+    font-weight: 700;
+    padding-left: 45px;
+}
+
+.solution-list ul .on {
+    color: #3e3e3e;
+}
+.solution-list ul{
+	border-right: 1px solid #d4d4d4;
+	height: 450px;
+	
+}
+.solution-list ul li div{
+	width: 20px;
+    height: 20px;
+    float: left;
+}
+.solution-item {
+    margin-left: 300px;
+    display: block;
+    padding: 20px 10px 0 10px;
+    overflow: hidden;
+}
+.solution-item ul{
+	margin-top: -25px;
+	overflow: hidden;
+    padding-left: 50px;
+}
+.solution-item ul li {
+    padding: 20px 0;
+    width: 50%;
+    float: left;
+    color: #666666;
+}
+.solution-item ul li a{
+	color: #666666;
+	padding-bottom: 5px;
+}
+.solution-item ul li a:hover{
+	color: #cdab6d;
+	border-bottom: 1px solid;
+}
+.solution-box{
+	margin-bottom: 20px;
+}
+
+
+button {
+  background-color: #2cc185;
+  color: #fff;
+  border: 0;
+  padding: 1em 1.5em;
+}
+
+button:hover {
+  background-color: #239768;
+  color: #fff;
+}
+
+button:focus {
+  background-color: #239768;
+  color: #fff;
+}
+
+.accordion {
+  position: relative;
+  background-color: #fff;
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #f1f4f3;
+  border-bottom: 1px solid #f1f4f3;
+  font-weight: 700;
+  color: #74777b;
+  vertical-align: middle;
+}
+
+.accordion .fa {
+  position: relative;
+  float: right;
+  height: 15px;
+  width: 15px;
+  top: -5px;
+}
+.accordion h4 {
+  position: relative;
+  top: 0.8em;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.accordion .tb{
+	width: 15px;
+    height: 15px;
+    position: relative;
+    top: 1.7em;
+    left: 1em;
+}
+.accordion a {
+  position: relative;
+  display: block;
+  color: #74777b;
+  padding: 0em 1em 2.5em 1em;
+  text-decoration: none;
+  padding-left: 45px;
+}
+.accordion-desc ul li{
+	padding: 20px 0;
+    padding-left: 15px;
+}
+.accordion-desc ul li a{
+	color: #666666;
+}
+.what{
+	overflow: hidden;
+}
+.what p{
+	color: #666;
+	font-size: 1.25rem;
+	margin-top: 20px;
+    margin-bottom: 20px;
+}
+.what textarea{
+	width: 100%;
+	height: 300px;
+	border: 1px solid #c9c9c9;
+	outline:none;
+	resize:none;
+}
+.what a{
+	background: #212020;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    width: 80px;
+    display: block;
+    float: right;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+@media screen and (max-width: 960px){
+	header{
+		height: auto !important;
+	}
+}
+@media screen and (max-width: 768px){
+	header{
+		background: url(../images/help_and_learning/back2.png) no-repeat;
+		background-size: 100%;
+	}
+	header input{
+		width: 75%;
+	}
+	header .input{
+		padding-top: 30%;
+		}
+	.logo{
+		display: none !important;
+	}
+	.solution-box{
+		display: none;
+	}
+	.accordion-container{
+		display: block !important;
+		margin-bottom: 30px;
+	}
+	.main{
+		padding-top: 0;
+		}
+}
+@media screen and (max-width: 570px){
+
+	header .input{
+		padding-top: 23%;
+		}
+}
+@media screen and (max-width: 500px){
+	header input{
+	width: 75%;
+    font-size: 0.75rem;
+    padding-left: 35px;
+    line-height: 2.2em;
+    padding-top: 0;
+	}
+	header .input{
+		padding-top: 17%;
+	}
+	.container{
+		padding-left: 0;
+		padding-right: 0;
+		}
+		.what p{
+			width: 80%;
+			text-align: center;
+		}
+		.what a{
+			margin-right: 15px;
+			}
+		textarea{
+			width: 90% !important;
+			margin: auto;
+			display: block;
+			height: 150px !important;
+		}
+}
+@media screen and (max-width: 350px){
+	header input{
+	width: 90%;
+	}
+}

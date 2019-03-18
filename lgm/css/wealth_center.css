@@ -1,0 +1,317 @@
+.wealth-top{
+	margin-top: 15px;
+	overflow: hidden;
+}
+.wealth-top h4{	
+	color: #cbab6d;
+	font-size: 1.25rem;
+	margin-top: 15px;
+    margin-bottom: 20px;
+}
+.explain{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 50%
+}
+.innovate img{
+	width: 30px;
+	height: 30px;
+	float: left;
+    margin: 5px;
+}
+.innovate{
+	border-bottom: 1px solid #eeeded;
+	overflow: hidden;
+	padding-bottom: 10px;
+
+}
+.innovate .innovate-font{
+	float: left;
+}
+.innovate-font span{
+	color: #929292;
+	font-size: 0.75rem;
+}
+.innovate-font p{
+	color: #333333;
+}
+.innovate-2{
+	border-bottom: 1px solid #f1e79b;
+	width: 95%;
+	padding-bottom: 5px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+.innovate-2 span:nth-child(1){
+	color: #5c5b60;
+}
+.innovate-2 span:nth-child(2){
+	color: #cbab6d;
+	float: right;
+}
+.obtain-center{
+	margin: auto;
+}
+.obtain-li{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.col-md-5 span{
+	padding-left: 50px;
+}
+.col-md-5 .obtain{
+	width: 60%;
+}
+.col-md-7 .obtain{
+	width: 50%;
+}
+.obtain{
+	overflow: hidden;
+	margin-left: 50px;
+}
+.obtain-img{
+	width: 300px;
+	height: 200px;
+	margin-left: 50px;
+}
+.obtain-img img{
+	height: 200px;
+}
+.obtain-img img{
+	
+}
+.obtain-li span{
+	color: #cbab6d;
+	font-size: 1.25rem;
+}
+.obtain ul li{
+	color: #666666;
+	line-height: 1.75em;
+}
+.obtain-ul li{
+	float: left;
+	color: #666;
+	width: 33.3333379%;
+}
+.width img{
+	width: 27px !important;
+}
+.obtain-ul img{
+	width: 35px;
+	height: 35px;
+	margin-top: 15px;
+}
+.obtain-ul p{
+	margin-top: 15px;
+	width: 35px;
+	text-align: center;
+	font-size: 0.75rem;
+}
+.main-bottom{
+	border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 15px;
+}
+.trend span{
+	font-weight: 700;
+	font-size: 1rem;
+    margin-bottom: 15px;
+    display: block;
+}
+.tab{
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+#xphh{
+    margin: auto;
+}
+.tab-menu{
+	width: 80%;
+	margin: auto;
+}
+.tab-menu ul{list-style:none;}
+.tab-menu ul li{float:left;overflow: hidden;width: 25%;margin-left: 15px;}
+.tab-menu ul li a{
+	display: block;
+	font-size: 0.85rem;
+	line-height: 2em;
+	text-align: center;
+	color: #666666;
+	border-bottom: 1px solid #fff;
+	margin: auto;
+	position: relative;
+}
+/*.tab-box div{display:none;}
+/* 让第一个框显示出来 */*/
+.tab-box div:first-Child{display:block;} 
+/* 改变选项卡选中时候的样式 */
+ .tab-menu #xp{
+ color: #c2984a;
+border-bottom: 1px solid #c2984a;
+ }
+ .firstrow div span{
+ 	background: url(../images/wealth_center/yiwen_icon.png);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 300%;
+    background-position: 0% 100%;
+    float: left;
+    position: relative;
+    top: 2px;
+}
+.firstrow li:nth-child(2) div span{
+ 	background-position: 50% 100%;
+ }
+.firstrow li:nth-child(3) div span{
+ 	background-position: 100% 100%;
+ }
+ .firstrow div{
+ 	width: 25%;
+    margin: auto;
+}
+.show-font p{
+	color: #333;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+.show-font span{
+	color: #666666;
+	margin-bottom: 30px;
+}
+.show{
+	width: 80%;
+	 margin: auto;
+	 font-size: 0.85rem;
+}
+.show a{
+	color: #cbab6d;
+	float: right;
+	margin-top: 20px;
+}
+.none{
+	display: none;
+}
+@media screen and (max-width: 768px){
+	.obtain,.obtain-img,.explain,.trend div{
+		margin: auto !important;
+	}
+	.explain{
+		width: 100%;
+		-moz-box-shadow:0px 0px 10px #ebebeb; -webkit-box-shadow:0px 0px 10px #ebebeb; box-shadow:0px 0px 10px #ebebeb;
+		position: relative;
+		position: relative;
+	}
+	.innovate{
+		border: 0;
+		padding-top: 30px;
+	}
+	.innovate img{
+	width: 30px;
+    height: 30px;
+    float: none;
+    margin: 0 auto;
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+}
+.innovate .innovate-font{
+	float: none;
+	text-align: center;
+}
+.innovate-font span{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.innovate-2{
+	border: 0;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: center;
+    margin: auto;
+	}
+	.innovate-2 span:nth-child(1){
+		color:#cbab6d;
+	}
+	.innovate-2 span:nth-child(2){
+		float: none;
+		color:#5c5b60 ;
+	}
+	.trend span{
+		text-align: center;
+	}
+	.tab{
+		display: none;
+	}
+	.col-md-5 span{
+		padding-left: 0;
+	}
+	.none{
+		display: block !important;
+	}
+	.block{
+		display: none !important;
+	}
+	.obtain{
+		padding-top: 20px;
+	}
+	.obtain-li span{
+		margin-left: 15px;
+		margin-bottom: 15px;
+	margin-top: 15px;
+	}
+	.main{
+		margin-bottom: 20px;
+	}
+	.main-bottom{
+		border-bottom: 0px;
+	}
+	.trend div{
+		width: 100%;
+	}
+	.obtain-1{
+		width: 80% !important;
+	}
+	.obtain-2{
+		width: 70% !important;
+	}
+	.trend{
+		margin-top: 20px !important;
+	}
+	.obtain-li{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.obtain-ul li{
+		text-align: center;
+	}
+	.obtain-ul p{
+		    margin: auto;
+    margin-top: 15px;
+}
+.wealth-top{
+	    padding-left: 9px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+}
+	}
+@media screen and (max-width: 350px){
+	.obtain{
+		width: 90% !important;
+	}
+	.obtain-2{
+		width: 75% !important;
+	}
+	.obtain-3{
+		width: 70% !important;
+	}
+}
+@media screen and (max-width: 1200px){
+	.firstrow div{
+		width: 35%;
+	}
+}	

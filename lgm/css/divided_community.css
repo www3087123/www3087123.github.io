@@ -1,0 +1,240 @@
+.main{
+	overflow: hidden;
+}
+.main-banner{
+	background: url(../images/divided_community/community_banner_pic.png) no-repeat;
+	padding-top: 130px;
+	background-size: 100% 100%;
+	height: 400px;
+}
+.main-banner p{
+	color: #ffffff;
+	font-size: 1.75rem;
+	margin-bottom: 25px;
+}
+.main-banner span{
+	color: #FFFFFF;
+	font-size: 1rem;
+}
+.title{
+	margin: auto;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.title span{
+	width: 90px;
+	border-bottom: 2px solid #e8d9bd;
+    letter-spacing: 5px;
+    display: block;
+    margin: auto;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 1em;
+}
+.title p{
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	letter-spacing: 2px;
+}
+.main-content-box{
+	height: 250px;
+	width: 50%;
+	float: left;
+	overflow: hidden;
+	background: url(../images/divided_community/white_bg.png);
+	background-size: 100% 100%;
+}
+.main-content-box div{
+	width: 45px;
+	height: 45px;
+	margin: auto;
+	margin-top: 35px;
+
+}
+.row .col-md-6:nth-child(1) .main-content-box:nth-child(1){
+	color: #fff;
+	background: url(../images/divided_community/yellow_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.row .col-md-6:nth-child(2) .main-content-box:nth-child(1){
+	color: #fff;
+	background: url(../images/divided_community/blue_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.main-content-box p{
+	font-size: 1.25rem;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: block;
+	text-align: center;
+	margin-top: 25px;
+}
+.main-content-box span{
+	padding-left: 15px;
+	padding-right: 15px;
+	display: block;
+	text-align: center;
+	font-size: 0.85rem;
+	line-height: 2em;
+}
+.main-content .col-md-6{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.timetable{
+	background: #17161b;
+}
+.timetable .title{
+	color: #fff;
+}
+.li-box{
+	width: 20%;
+	float: left;
+}
+.li-box div{
+	    width: 55px;
+    height: 55px;
+    margin: auto;
+}
+.li-box span{
+	display: block;
+    text-align: center;
+    font-size: 0.95rem;
+    width: 55%;
+    margin: auto;
+    margin-top: 18px;
+}
+.characteristic{
+	overflow: hidden;
+	padding-bottom: 70px;
+}
+.function{
+	margin-top: 50px;
+	overflow: hidden;
+}
+.none{
+	display: none;
+}
+@media screen and (max-width: 1300px){
+	.main-banner{
+		height: 300px;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.li-box span{
+    	width: 80%;
+	}
+}
+@media screen and (max-width: 990px){
+	.main-content-box span{
+		font-size: 0.75rem;
+	}
+	.li-box span{
+		font-size: 0.75rem;
+    	width: 80%;
+	}
+	.main-banner span{
+		display: none;
+	}
+	.main-banner p{
+		display: none;
+	}
+	.none{
+		display: block;
+	}
+	.none p{
+		display: block !important;
+	}
+}
+.img-b .none{
+	display: none !important;
+}
+.timetable .none{
+	display: none !important;
+}
+@media screen and (max-width: 768px){
+	.main-banner{
+		background: url(../images/divided_community/social_pic.png);
+		background-size: 100% 100%;
+	}
+	.img-b .none{
+		display: block !important;
+	}
+	.img-b .block{
+		display: none !important;
+	}
+	.timetable .none{
+		display: block !important;
+	}
+	.timetable .block{
+		display: none !important;
+	}
+	.none{
+		display: none;
+	}
+	.main-content-box span{
+		font-size: 0.75rem;
+	}
+	.main-content-box p{
+		color: #333;
+	}
+	.row .col-md-6:nth-child(1) .main-content-box:nth-child(1) p{
+		color: #fff;
+	}
+	.row .col-md-6:nth-child(2) .main-content-box:nth-child(1) p{
+		color: #fff;
+	}
+}
+@media screen and (max-width: 500px){
+	.timetable .none{
+		width: 200%;
+	}
+	.main-banner{
+		height: 200px;
+	}
+	.title span{
+		display: none;
+	}
+	.title p{
+		font-size: 1.25rem;
+	}
+	.function{
+		margin-top: 0;
+	}
+	.li-box{
+		width: 90%;
+	    border-top: 1px solid #e5e5e5;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+	}
+	.li-box div{
+		float: left;
+	}
+	.li-box span{
+		float: left;
+		text-align: left;
+		padding-left: 15px;
+		font-size: 0.95rem;
+		color: #666666;
+	}
+	.characteristic{
+		padding-bottom: 20px;
+	}
+}
+@media screen and (max-width: 375px){
+	.main-content-box p{
+		font-size: 0.85rem;
+		margin-bottom: 5px;
+	}
+	.main-content-box span{
+		font-size: 0.75rem;
+	}
+}
+@media screen and (max-width: 350px){
+	.li-box span{
+		font-size: 0.75rem;
+		width: 75%;
+	}
+}

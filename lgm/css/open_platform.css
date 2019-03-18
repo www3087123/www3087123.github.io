@@ -1,0 +1,202 @@
+.main-banner{
+	background: #262626;
+}
+.main-content{
+	margin-bottom: 60px;
+}
+.none{
+	display: none !important;
+}
+.logo-x{
+	width: 35px;
+	height: 35px;
+}
+.top{
+	margin-top: 70px;
+}
+.title{
+	overflow: hidden;
+}
+.title .hr{
+	width: 10px;
+	height: 30px;
+	background: #ccab6d;
+	float: left;
+}
+.title span{
+	float: left;
+	color: #333333;
+	font-size: 1.25rem;
+	margin-left: 15px;
+}
+.title div{
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+.swiper1 .swiper-wrapper .swiper-slide{
+	position: relative;
+	min-width: 80px;
+}
+.swiper1 .swiper-wrapper .swiper-slide .img{
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    margin-right: 7px;
+}
+.swiper1 .swiper-wrapper .swiper-slide .img img{
+    width: 50px;
+    height: 25px;
+}
+.qq{
+	margin-left: -100% !important;
+}
+/*.swiper1 .swiper-slide{
+	background: url(../images/open_platform/Collage.png) no-repeat -30px;
+    margin-left: 35px;
+    background-size: 50%;
+    width: 120px !important;
+    padding-left: 15px;
+}*/
+
+.title{
+	border-bottom: 4px solid #e5e5e5;
+	padding-bottom: 5px;
+	margin-top: 20px;
+}
+.tab{
+	
+}
+.tab .tab-img{
+	width: 70%;
+}
+.tab a{
+	display: block;
+    border-radius: 5px;
+    background: #CCAB6D;
+    color: #fff;
+    line-height: 20px;
+    float: left;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    font-size: 0.75rem;
+    width: 70px;
+}
+
+.tab-span::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 5px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+.tab-span::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 10px;
+         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: #aaa;
+    }
+.tab-span::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        background: #EDEDED;
+    }
+    
+.tab-span{
+	line-height: 2em;
+    margin: auto;
+    text-align: left;
+    text-indent: 1.5em;
+    text-align: justify;
+    font-size: 0.75rem;
+    color: #000;
+    border-left: 1px dashed #e2e2e2;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 200px;
+    overflow-x: hidden;
+}
+.tab-span span{
+	   display: block;
+	   text-indent: 2em;
+}
+.tab{
+	min-height: 200px;
+}
+.tab-span p{
+	text-indent: 2em;
+}
+.value{
+	position: relative;
+}
+.ljgd{
+	position: absolute;
+    bottom: 15%;
+    left: 30%;
+}
+.ljgd a{
+	display: block;
+    border-radius: 5px;
+    background: #CCAB6D;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    font-size: 0.75rem;
+    width: 70px;
+}
+.tab a{
+	display: none;
+}
+@media screen and (max-width: 1200px){
+	.tab-img{
+		margin: auto;
+	}
+}
+@media screen and (max-width: 990px){
+	.tab-img{
+		margin-top: 50px;
+		width: 100% !important;
+	}
+}
+@media screen and (max-width: 768px){
+	.swiper1 .swiper-wrapper .swiper-slide span{
+		font-size: 0.75rem;
+	}
+	.tab-img{
+		margin-top: 0px;
+	}
+	.tab-span{
+		right: 30px;
+		bottom: 15px;
+		border: 0;
+		padding-left: 0;
+		margin-top: 20px;
+		height: 150px;
+	}
+	.tab-span span{
+		width: 100%;
+	}
+	.swiper1 .swiper-slide{
+		width: 23% !important;
+	}
+	.value .none{
+		display: block !important;
+	}
+	.value .block{
+		display: none !important;
+	}
+	.main-banner .none{
+		display: block !important;
+	}
+	.main-banner .block{
+		display: none !important;
+	}
+	.main-banner .container{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		max-width: 100% !important;
+	}
+	.ljgd{
+		position: absolute;
+	    bottom: 10%;
+	    left: 20%;
+	}
+}
