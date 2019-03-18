@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>		
+	</head>
+	<link rel="stylesheet" href="css/qrCode.css" />
+	<body>
+		<div id="top">
+			<img src="images/h5_bg.png" class="bg"/>
+			<div class="topC">
+				<img class="head"/>
+				<p class="name"></p>
+				<p class="time"><span></span>购买该树，拥有以下权益。</p>
+				<div class="box">
+					<img class="equitiesOne"/>					
+					<img class="equitiesTwo"/>					
+					<img class="equitiesthree"/>					
+					<img class="equitiesFour"/>					
+				</div>
+			</div>	
+			<div class="tit">
+				<p class="t_f"></p>
+				<p class="t_s"></p>
+			</div>
+		</div>
+		<div class="n_t">
+			<div class="tits">
+				<p class="t_f"></p>
+				<p class="t_s"></p>
+			</div>
+		</div>
+		<div class="bd">
+			<div class="bd_s">
+				<div class="bd_t">
+					<p class="latitude"></p>
+					<p class="longitude"></p>
+				</div>
+				<div>当地经纬度</div>
+			</div>
+			<div class="bd_s">
+				<div class="bd_t temperature"></div>
+				<div>今日温度</div>
+			</div>
+			<div class="bd_s">
+				<div class="bd_t">
+					<img class="weatherIcon"/>
+				</div>
+				<div>今日当地天气</div>
+			</div>
+		</div>
+		<img id="img1"/>
+		<div class="bd bds">
+			<div>
+				<p class="bd_g age"></p>
+				<p>培育年数</p>
+			</div>
+			<div>
+				<p class="bd_g leaderName"></p>
+				<p>负责人</p>
+			</div>
+		</div>
+	</body>
+	<div class="rights">
+		<img src="images/h5_icon_bg3.png" />
+		<span>认养权益</span>
+		<img src="images/h5_icon_bg2.png" />
+	</div>
+	<div class="box">
+		<img class="equitiesOne"/>					
+		<img class="equitiesTwo"/>					
+		<img class="equitiesthree"/>					
+		<img class="equitiesFour"/>				
+	</div>
+	<div class="company">
+		<img src="images/green_img_raiders@3x.png" class="c_l"/>
+		<div class="c_r">
+			<span class="companyName"></span>
+			<div class="li">
+				<img src="images/h5_icon_position.png" />
+				<div class="companyAdress"></div>
+			</div>
+			<!--<div class="li">
+				<img src="images/h5_icon_address.png" />
+				<div>乘车2路公交到达湘西凤凰大坡村，乘车2路公交到达湘西凤凰大坡村…</div>
+			</div>-->
+		</div>	
+	</div>
+	<a id="bottom" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.trustexporter.dianlin">前往app认养树</a>
+</html>
+<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js" ></script>
+<script type="text/javascript" src="js/url.js" ></script>
+<script>
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	var treeId = getQueryString('treeId');
+	$.ajax({
+		type:"get",
+		url:url+"/forest/tree/get?treeId="+treeId,//
+		success:function(data){
+			console.log(data)
+			if(data.data.nickName==''||data.data.nickName==null){			
+				$('.n_t').show();
+			}else{
+				$('#bottom').html('前往app查看更多信息');
+				$('.head').attr('src',data.data.userIcon);
+				$('.name').text(data.data.nickName);
+				$('.time span').html(data.data.nickName+'于'+data.data.updateDate.substring(0,10));
+				$('.rights,.boxs').hide();
+				$('#top').show();
+			};
+			$('.t_f').text(data.data.term.termName);
+			$('.t_s').text('此树编号:'+data.data.code);
+			$('.latitude').text('N'+ Number(data.data.term.latitude).toFixed(3)+'″')
+			$('.longitude').text('E'+ Number(data.data.term.longitude).toFixed(3)+'″')
+			$('.equitiesOne').attr('src',data.data.term.equitiesOne);
+			$('.equitiesTwo').attr('src',data.data.term.equitiesTwo);
+			$('.equitiesthree').attr('src',data.data.term.equitiesthree);
+			$('.equitiesFour').attr('src',data.data.term.equitiesFour);
+			$('.weatherIcon').attr('src',data.data.weatherIcon);
+			$('#img1').attr('src',data.data.term.url);		
+			$('.temperature').html(data.data.temperature);
+			$('.leaderName').text(data.data.term.leaderName);
+			$('.age').text(data.data.term.age+'年');
+			$('.c_l').attr('src',data.data.term.companyIcon);
+			$('.companyName').html(data.data.term.companyName);
+			$('.companyAdress').html(data.data.term.companyAdress);
+		}
+	});
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/register.css" />
+	</head>
+	<body>
+		<img src="images/banner1.png"/>
+		<div id="content">
+			<div class="form">
+				<div class="inputBox">
+					<input type="number" placeholder="请输入手机号" class="phone"/>
+				</div>
+				<div class="inputBox">
+					<input type="text" placeholder="请输入验证码" class="test"/>
+					<div class="message">
+						<div id="message " class="sendMessage">获取验证码</div>
+						<div class="cover"></div>
+					</div>
+				</div>
+				<div class="inputBox">
+					<input type="password" placeholder="请输入密码" class="password"/>
+				</div>
+				<div class="xieyi">点击注册即表示已阅读并同意<a style="color: #3766FF;text-decoration: none;" href="agreement.html">《点林用户协议》</a></div>
+				<div class="inputBox submit" onclick="register()">立即注册</div>
+			</div>
+		</div>
+		<div class="foot">
+			<h3><img src="images/icon_grass.png" alt="" />活动说明<img src="images/icon_grass.png" alt="" /></h3>
+			<ol>
+				<li>每位用户成功邀请一位新用户注册，邀请人与被邀请人分别获得200林点。林点可用于平台内抵扣现金。</li>
+				<li>点林平台对本活动保持最终解释权。</li>
+			</ol>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js" ></script>
+	<script type="text/javascript" src="js/lib/base64.js" ></script>
+	<script type="text/javascript" src="js/layer.js" ></script>
+	<link rel="stylesheet" href="js/skin/layer.css" />
+	<script type="text/javascript" src="js/url.js" ></script>
+	<script type="text/javascript" src="js/lib/hashes.js" ></script>
+	<script type="text/javascript" src="js/register.js" ></script>
+</html>

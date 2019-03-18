@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+	<head>
+		<meta charset="UTF-8">
+		<title>头条详情</title>
+	</head>
+	<link rel="stylesheet" href="css/headlinesDetail.css" />
+
+	<body>
+		<div id="content">
+			<div class="img"><img src="images/home_details_icon_share.png" class="share1"/></div>
+			<p class="h1"></p>
+			<p class="h2"><span class="author"></span><span class="createTime"></span></p>
+			<div class="text">
+			</div>
+		</div>
+		<!--弹窗-->
+		<div id="term">
+			<div>——————&nbsp;分享给好友 &nbsp;——————</div>
+			<div class="shareT">
+				<a class="ho_in">
+					<img src="images/h5_icon_circle.png/" />
+					<span>朋友圈</span>
+					<div class="shareType">2</div>
+				</a>
+				<a class="ho_in">
+					<img src="images/h5_icon_weixin.png" />
+					<span>微信好友</span>
+					<div class="shareType">1</div>
+				</a>
+				<a class="ho_in">
+					<img src="images/h5_icon_qq.png" />
+					<span>QQ好友</span>
+					<div class="shareType">3</div>
+				</a>
+			
+			</div>
+		</div>
+		<!--遮罩-->
+		<div id="zhezhao"></div>
+		
+	</body>
+
+</html>
+<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="js/url.js"></script>
+<script>
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	var newsId = getQueryString("id");
+
+	var tit;
+	var shareImg;
+	var description;
+	$.ajax({
+		type: "get",
+		url: url + "/cms/news/get?newsId="+newsId,
+		success: function(data) {
+			console.log(data)
+			$('.h1').html(data.data.data.title);
+			$('.author').html(data.data.data.author);
+			$('.createTime').html(data.data.data.createTime);
+			$('.text').html(data.data.data.cmsNewsContent.content);
+			tit=data.data.data.title;
+			shareImg=data.data.data.sharePic;
+			description=data.data.data.description;
+		}
+	});
+	$('.share1').click(function(){
+		$('#term,#zhezhao').show();
+	})
+	$('#zhezhao').click(function(){
+		$('#term,#zhezhao').hide();
+	})
+	$('.ho_in').click(function() {
+			var type = $(this).children('.shareType').html();
+			var shareUrl = 'https://h5.doforest.com/headlinesDetail.html?id='+newsId;
+			var share = '{"shareUrl":"' + shareUrl + '","sharePic":"'+shareImg+'","shareTitle":"'+tit+'","shareSubTitle":"'+description+'","type":"' + type + '"}';
+			$(this).attr('href', 'tel:' + share);
+			console.log(share);
+	})
+</script>

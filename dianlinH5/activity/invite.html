@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<title>邀请好友注册</title>
+		<link rel="stylesheet" href="../css/public.css" />
+		<link rel="stylesheet" href="css/invite.css" />
+	</head>
+	<style>
+		#cover {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 18888;
+			background-color: #000000;
+			opacity: 0.7;
+		}
+		
+		#guide {
+			display: none;
+			position: absolute;
+			right: 18px;
+			top: 5px;
+			z-index: 19999;
+		}
+		
+		#guide img {
+			width: 260px;
+			height: 180px;
+		}
+	</style>
+	<body>
+		<div class="top">
+			<img src="image/pic_share.png" />
+			<div class="share" onclick="_system._guide(true)">分享到微信</div>
+		</div>
+		<div class="content">
+			<div class="center">
+				<div class="centerT">共邀请<span class="num"></span>人，获得<span  class="allP"></span>元返现</div>
+				<div class="list listT">
+					<div>昵称</div>
+					<div>状态</div>
+					<div>为我减免金额</div>
+				</div>
+
+				<div class="noList">暂无相关记录</div>
+			</div>
+			
+		</div>
+		<div id="cover"></div>
+		<div id="guide"><img src="image/guide1.png"></div>
+	</body>
+</html>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js" ></script>
+<script type="text/javascript" src="../js/url.js" ></script>
+<script type="text/javascript" src="../js/lib/jquery.cookie.js" ></script>
+<script>
+	function getQueryString(name) {
+	    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+	    var r = window.location.search.substr(1).match(reg);
+	    if (r != null) {
+	        return unescape(r[2]);
+	    }
+	    return null;
+	}
+	var authorization = $.cookie('authorization');	
+	var myOpenId = $.cookie('myOpenId');	
+	var inviteId = getQueryString("inviteId");
+	$.ajax({
+		type:"get",
+		url:url+"/trade/activityOrder/getUserInviteList?page.showCount=100&activityId=2",
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader("Authorization", authorization);
+		},
+		success:function(data){
+			console.log(data)
+			if(data.data.data.length==0){
+				$('.inviteList').hide();
+				$('.noList').show();
+				$('.num').html('0');
+				$('.allP').html('0');
+			}else{
+				$('.num').html(data.data.data.length);
+				$('.allP').html(data.data.data.length*18);
+				for(var i = 0;i<data.data.data.length;i++){
+					var list = '<div class="list inviteList"><div>'+data.data.data[i].nickName+'</div><div>报名成功</div><div>18元</div></div>'
+					$('.center').append(list)
+				}				
+			}
+		},
+		error: function(data) {
+			if((data.status && data.status == '401') || (data.statusText && data.statusText == 'No Transport')) {
+				setTimeout(function() {
+					window.location.href = 'register.html?myOpenId=' + myOpenId+'&inviteId='+inviteId
+				}, 2000)
+				return;
+			}
+		}
+
+	});
+	
+	var _system = {
+		$: function(id) {
+			return document.getElementById(id);
+		},
+		_client: function() {
+			return {
+				w: document.documentElement.scrollWidth,
+				h: document.documentElement.scrollHeight,
+				bw: document.documentElement.clientWidth,
+				bh: document.documentElement.clientHeight
+			};
+		},
+		_scroll: function() {
+			return {
+				x: document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft,
+				y: document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop
+			};
+		},
+		_cover: function(show) {
+			if(show) {
+				this.$("cover").style.display = "block";
+				this.$("cover").style.width = (this._client().bw > this._client().w ? this._client().bw : this._client().w) + "px";
+				this.$("cover").style.height = (this._client().bh > this._client().h ? this._client().bh : this._client().h) + "px";
+			} else {
+				this.$("cover").style.display = "none";
+			}
+		},
+		_guide: function(click) {
+			this._cover(true);
+			this.$("guide").style.display = "block";
+			this.$("guide").style.top = (_system._scroll().y + 5) + "px";
+			window.onresize = function() {
+				_system._cover(true);
+				_system.$("guide").style.top = (_system._scroll().y + 5) + "px";
+			};
+			if(click) {
+				_system.$("cover").onclick = function() {
+					_system._cover();
+					_system.$("guide").style.display = "none";
+					_system.$("cover").onclick = null;
+					window.onresize = null;
+				};
+			}
+		},
+		_zero: function(n) {
+			return n < 0 ? 0 : n;
+		}
+	}
+	
+
+	$.ajax({
+		type:"get",
+		data:{
+			url:window.location.href
+		},
+		url:url+"/weixin/share",
+		success:function(data){
+			console.log(data)
+			wxState(data)
+		}
+	});
+	
+	function wxState(data){
+		console.log(data)
+		wx.config({    
+		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。    
+		    appId: 'wx5ac7a175a73392a3', // 必填，公众号的唯一标识    
+		    timestamp: data.data.timestamp, // 必填，生成签名的时间戳    
+		    nonceStr: data.data.nonce_str, // 必填，生成签名的随机串    
+		    signature: data.data.sign,// 必填，签名，见附录1   
+		    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage']
+		});  	
+	}
+	wx.ready(function(){
+		wx.onMenuShareTimeline({
+			title: '樱桃园采摘季，免费名额等你来拿', // 分享标题
+	    	link: 'https://h5.doforest.com/activity/load.html?inviteId='+myOpenId, 
+	    	// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+	    	imgUrl: 'https://images.doforest.com//img-20180429003659904-SLA8KLIW' // 分享图标
+		});
+		
+		wx.onMenuShareAppMessage({
+			title: '樱桃园采摘季，免费名额等你来拿', // 分享标题
+			desc: '每成功邀请一位立减18元!', // 分享描述
+	   		link: 'https://h5.doforest.com/activity/load.html?inviteId='+myOpenId, 
+	    	type: '',
+	    	dataUrl: '',
+	    	// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+			imgUrl: 'https://images.doforest.com//img-20180429003659904-SLA8KLIW',// 分享图标	
+			success: function () {
+			
+				// 用户确认分享后执行的回调函数
+			},
+			cancel: function () {
+		
+				// 用户取消分享后执行的回调函数
+			},
+			fail: function () {
+			
+				// 用户取消分享后执行的回调函数
+			}
+		});		
+	});
+</script>

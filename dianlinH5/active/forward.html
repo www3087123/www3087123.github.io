@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>转发</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>		
+		<link rel="stylesheet" type="text/css" href="css/activity.css"/>
+		<link rel="stylesheet" type="text/css" href="css/success.css"/>
+		<link rel="stylesheet" type="text/css" href="css/forward.css"/>
+	</head>
+	<body>
+		<header>
+			活动规则
+		</header>
+		<img src="img/pic_top.png"/>
+		<div class="detali nno">
+			<div class="top">
+				<img src="" class="icon"/>
+				<div class="name"></div>
+				<div class="right"><img />已获得<span></span>个感动</div>
+			</div>
+			<div class="main"></div>
+			<div class="foot foot1"></div> 
+			
+		</div>
+		<div class="detali noo">
+			<div class="top">
+				<img src="" class="icon"/>
+				<div class="name">林筱筱</div>
+				<div class="right"><img />已获得<span></span>个感动</div>
+			</div>
+			<div class="main1">
+				<img src="img/icon_delete_no.png"/>
+			</div>
+			<div class="foot">
+				<p><img src=""/>宝宝的感动瞬间已删除<br />快来留下让你感动的瞬间吧</p>
+			</div> 
+			
+		</div>
+		<a>
+			<img src="img/icon_button_1.png" style="width: 3.6rem;margin: 0.4rem auto;" class="TA" onclick="clickc(this)"/>
+			<img src="img/icon_button_2.png" style="width: 3.6rem;margin: 0.4rem auto;" class="TAa"/>
+		</a>
+		<img src="img/pic_reward.png"  class="bannerimg"/>
+		
+		
+		
+		<!--//弹框-->
+		<div id="term">
+			<h1><img src="img/icon_rule_diamond.png"/>活动奖励<img src="img/icon_rule_diamond.png"/><img src="img/icon_rule_cancel.png" id="fix"/></h1>
+			<h2>一、活动规则：</h2>
+			<p>1、转发分享，让朋友一起参与点赞活动(点“感动”按钮)。非点林用户只能点一次，点林用户每天可点一次。</p>
+			<p>2、参赛对象：未满14周岁的宝宝。</p>
+			<h2>二、奖品设置：</h2>
+			<p>
+				1、前3名：获得“感动”最多的前3名的宝宝们，点林平台会送上一棵价值1000元以内的果树给其认养。认养成功后，每年的水果成熟季都会收到认养的树长出的绿色健康水果，也可以自行前往采摘。平台也会邀请宝宝和家长参与挂牌等活动；
+			</p>
+			<p>
+				2、第4-100名：点林平台会送上一棵桑树给其认养，认养后每天可以在平台内收集桑叶，桑叶可以用来养蚕宝宝（可以平台内兑换领取），也可以拿来兑换桑叶茶、桑葚干、蚕丝被等等。在桑葚成熟的季节，可以去实地采桑葚；在养蚕的季节，可以参与摘桑叶、喂蚕宝宝、拉棉兜、做蚕丝被等体验活动。
+			</p>
+			<p>
+				3、参与奖：平台给每位参与用户发放1000林点，林点可用于平台内认养果树，购买水果，参加平台活动等。
+			</p>
+		</div>
+		
+		<!--感动-->
+		<div id="letede">
+			<h1>感动</h1>
+			<p>您已被好友的暖心事迹感动，</p>
+			<p>相信您也有让人感动的暖心瞬间</p>
+			<div class="anniu">
+				<a class="NO">取消</a>
+				<a class="YES" href='http://a.app.qq.com/o/simple.jsp?pkgname=com.trustexporter.dianlin' style="text-decoration: none;">我要下载参与</a>
+			</div>
+			<span style="text-align: right;display: block;margin-top: 0.2rem;">明天还能再点哦！</span>
+		</div>
+		<!--遮罩-->
+		<div id="zhezhao"></div>
+		<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/url.js"></script>
+		<script type="text/javascript">
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}		
+			var authorization = $.cookie('authorization');
+			var userId = getQueryString('userId');
+			if(authorization != null && authorization != undefined && authorization != '') {
+				var login = true
+			} else {
+				var login = false
+			}
+			
+			var id='';
+			$.ajax({
+				type:"post",
+				url: url + "/forest/forestComments/get.json ",
+				async:false,
+				beforeSend: function(xhr) {
+				xhr.setRequestHeader("Authorization", authorization);
+				},
+				data:{
+					id:userId
+				},
+				success:function(data){
+					console.log(data)
+					$('.icon').attr('src',data.data.comments.icon)
+					$('.right span').html(data.data.comments.commentatorCount)
+					$('.name').html(data.data.comments.nickName)
+					id=data.data.comments.commentsId
+					if(data.data.comments.deleted==0){
+						$('.main').html(data.data.comments.content)
+						$('.nno').show()
+					}else{
+						$('.noo').show()
+					}
+					if(data.data.comments.isClickGood==0){
+						$('.TA').show()
+						$('.right img').attr("src","img/icon_like.png")
+					}else{
+						$('.right img').attr("src","img/icon_like_click.png")
+						$('.TAa').show()
+						$('.right ').addClass('red')
+					}
+					
+					str = data.data.comments.picture
+						var strs = new Array();
+						strs = str.split(",");
+						var pic = '';
+						for(var j = 0; j < strs.length; j++) {
+							pic += '<img src="' + strs[j] + '"  >'
+						}
+					$('.foot1').append(pic)
+					
+				}
+			});
+			
+			
+			//点赞
+			function clickc(){
+				if(login) {
+					$.ajax({
+						type: "post",
+						url: url + "/forest/forestClickGood/add.json",
+						beforeSend: function(xhr) {
+							xhr.setRequestHeader("Authorization", authorization);
+						},
+						data: {
+							commentsId: id
+						},
+
+						success: function(data) {
+							console.log(data)
+							if(data.result == true) {
+								$('.right').addClass('red')
+								var number = Number($('.right span').html()) + 1
+								$('.right span').html(number)
+								$('#letede,#zhezhao').css('display','block')
+								$('.right img').attr("src",'img/icon_like_click.png')
+							}
+						},
+						error: function(data) {
+							if((data.status && data.status == '401') || (data.statusText && data.statusText == 'No Transport')) {
+								setTimeout(function() {
+									window.location.href='../activity/register.html'
+								}, 2000)
+								return;
+							}
+						},
+					});
+				} else {
+					window.location.href='../activity/register.html?userId='+userId;
+				}
+			}
+			
+			
+			$('header').click(function(){
+				$('#term,#zhezhao').css('display','block')
+			})
+			
+			$('#term').click(function(){
+				$('#term,#zhezhao').css('display','none')
+			})
+			
+			$('.NO').click(function(){
+				$('#letede,#zhezhao').css('display','none')
+			})
+			
+			$('.TAa').click(function(){
+				window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.trustexporter.dianlin'
+			})
+			
+		</script>
+	</body>
+</html>
+
+
+

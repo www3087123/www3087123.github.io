@@ -1,0 +1,23 @@
+
+.main{
+    padding: 0.3rem 0rem;
+    margin: 0rem 0.3rem;
+    
+    border-bottom: 1px solid #E6E6E6;
+}
+.main .main1 div{
+    font-size: 0.29rem;
+    width: 1.35rem;
+    height: 0.28rem;
+    float: left;
+    color: #666;
+}
+.main1 span{
+    color: #333;
+    margin-left: 0.81rem;
+}
+.top div{
+     color: #fff;
+    font-size: 0.36rem;
+    text-align: center;
+}

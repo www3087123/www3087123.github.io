@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发布成功</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>		
+		<link rel="stylesheet" type="text/css" href="css/activity.css"/>
+		<link rel="stylesheet" type="text/css" href="css/success.css"/>
+	</head>
+	<body>
+		<header>
+			活动规则
+		</header>
+		<img src="img/pic_top.png"/>
+		<div class="detali me">
+			<div class="main"></div>
+			<div class="foot1"></div>
+			<div class="bottom">
+				<div class="delete"><img src="img/icon_delete.png"   /></div>
+				<div class="rownum"></div>
+				<div class="top-right">
+					<img src="img/icon_like.png" class="blackx"/>
+					<span class="commentatorCount" ></span>
+				</div>
+			</div>
+		</div>
+		<a ><img src="img/icon_button_4.png" style="width: 3.6rem;margin: 0.4rem auto;" /></a>
+		<img src="img/pic_reward.png"  class="bannerimg"/>
+		
+		<!--//弹框-->
+		<div id="term">
+			<h1><img src="img/icon_rule_diamond.png"/>活动奖励<img src="img/icon_rule_diamond.png"/><img src="img/icon_rule_cancel.png" id="fix"/></h1>
+			<h2>一、活动规则：</h2>
+			<p>1、转发分享，让朋友一起参与点赞活动(点“感动”按钮)。非点林用户只能点一次，点林用户每天可点一次。</p>
+			<p>2、参赛对象：未满14周岁的宝宝。</p>
+			<h2>二、奖品设置：</h2>
+			<p>
+				1、前3名：获得“感动”最多的前3名的宝宝们，点林平台会送上一棵价值1000元以内的果树给其认养。认养成功后，每年的水果成熟季都会收到认养的树长出的绿色健康水果，也可以自行前往采摘。平台也会邀请宝宝和家长参与挂牌等活动；
+			</p>
+			<p>
+				2、第4-100名：点林平台会送上一棵桑树给其认养，认养后每天可以在平台内收集桑叶，桑叶可以用来养蚕宝宝（可以平台内兑换领取），也可以拿来兑换桑叶茶、桑葚干、蚕丝被等等。在桑葚成熟的季节，可以去实地采桑葚；在养蚕的季节，可以参与摘桑叶、喂蚕宝宝、拉棉兜、做蚕丝被等体验活动。
+			</p>
+			<p>
+				3、参与奖：平台给每位参与用户发放1000林点，林点可用于平台内认养果树，购买水果，参加平台活动等。
+			</p>
+		</div>
+		
+		<!--删除-->
+		<div id="letede">
+			<h1>真的删除吗</h1>
+			<p>删除成功后，感动数将重新计算。</p>
+			<p>删除后可上传新内容重新参加活动</p>
+			<div class="anniu">
+				<a class="NO">取消</a>
+				<div class="dele"></div><a class="YES">狠心删除</a>
+			</div>
+			
+		</div>
+		<!--遮罩-->
+		<div id="zhezhao"></div>
+		<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="../js/url.js"></script>
+		<script type="text/javascript" src="../js/layer.js"></script>
+		<link rel="stylesheet" type="text/css" href="../js/skin/layer.css"/>
+		<script type="text/javascript">
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}		
+			var token = getQueryString("token");
+			var commentsId = getQueryString("commentsId");
+			if(token!=null&&token!=undefined&&token!=''){
+				var login= true
+			}else{
+				var login=false
+			}
+			var page = 1
+			//--------------上拉加载更多---------------
+			//获取滚动条当前的位置 
+			function getScrollTop() {
+				var scrollTop = 0;
+				if(document.documentElement && document.documentElement.scrollTop) {
+					scrollTop = document.documentElement.scrollTop;
+				} else if(document.body) {
+					scrollTop = document.body.scrollTop;
+				}
+				return scrollTop;
+			}
+
+			//获取当前可视范围的高度 
+			function getClientHeight() {
+				var clientHeight = 0;
+				if(document.body.clientHeight && document.documentElement.clientHeight) {
+					clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+				} else {
+					clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+				}
+				return clientHeight;
+			}
+
+			//获取文档完整的高度 
+			function getScrollHeight() {
+				return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+			}
+
+			//滚动事件触发
+			window.onscroll = function() {
+				if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+					page++;
+					selectJudgeOrderPageList(page)
+				}
+			}
+			
+			$('header').click(function(){
+				$('#term,#zhezhao').css('display','block')
+			})
+			$('#term').click(function(){
+				$('#term,#zhezhao').css('display','none')
+			})
+			$('.delete').click(function(){
+				$('#letede,#zhezhao').css('display','block')
+			})
+			$('.NO').click(function(){
+				$('#letede,#zhezhao').css('display','none')
+			})
+			
+			
+			
+		function selectJudgeOrderPageList(page) {
+				$.ajax({
+					type: "post",
+					url: url + "/forest/forestComments/pagelist.json?page.currentPage=" + page + '&page.showCount=10',
+					beforeSend: function(xhr) {
+						xhr.setRequestHeader("Authorization", 'iQX2sJZeyVELCUJ3s6J1OKQVz9neJFOiRfp7GerxhZOR0YqU0YtjCXc7qJ7x9GUp');
+					},
+					success: function(data) {
+						console.log(data)
+
+						for(var i = 0; i < data.data.data.length; i++) {
+							str = data.data.data[i].picture
+							var strs = new Array();
+							strs = str.split(",");
+							var pic = '';
+							for(var j = 0; j < strs.length; j++) {
+								pic += '<img src="' + strs[j] + '"  >'
+							}
+						
+							if(i < 3) {
+								var icon = '<div class="top-img"><img src="img/icon_no' + [i + 1] + '_bg.png" class="no"/><img src="' +
+									data.data.data[i].icon + '" class="vatar"/><img src="img/icon_no' + [i + 1] + '_up.png" class="up"/></div>'
+							} else if(i >= 3) {
+								var icon = '<div class="top-img"><img src="' +
+									data.data.data[i].icon + '" class="vatar"/><img src="img/icon_no4_up.png" class="img4"/><span class="top-po">' + [i + 1] + '</span></div>'
+							}
+							
+							if(data.data.data[i].isClickGood == 0) {
+								var img='<img src="img/icon_like.png" onclick="clicka(this)" class="blackx"  alt="'+data.data.data[i].commentsId+'" />'
+							} else if(data.data.data[i].isClickGood == 1) {
+								var img='<img src="img/icon_like_click.png" class="redx" />'
+							}
+							
+							
+							
+							var list = '<div class="detali"><div class="top">' + icon + '<div class="top-center"><div class="center-tit">' +
+								data.data.data[i].nickName + '</div><div class="center-time">' +
+								data.data.data[i].commentsTime + '</div></div><div class="top-right" >'+img+'<span>' +
+								data.data.data[i].commentatorCount + '</span></div></div><div class="main">' +
+								data.data.data[i].content + '</div><div class="foot">' + pic + '</div></div>'
+							$('body').append(list)
+							$('.foot img').height($('.foot img').width())
+							
+						}
+						
+						$('.main').html(data.data.comments.content)
+						$('.rownum').html('第'+data.data.comments.rownum+'名')
+						$('.commentatorCount').html(data.data.comments.commentatorCount)
+						$('.dele').html(data.data.comments.commentsId)
+
+						
+						if(data.data.comments.deleted==1){
+							$('.me').hide()
+						}
+						str1=data.data.comments.picture;
+						var strs= new Array();
+						strs1=str1.split(",");
+						console.log(strs1)
+						var pic1='';
+						for(a=0;a<strs1.length;a++){
+						$('.foot1').append('<img src="' + strs1[0] + '">')
+						
+						$('.foot1 img').height($('.foot1 img').width())
+						}
+						
+					}
+				});
+			}
+			selectJudgeOrderPageList(1)	
+			
+			
+			//点赞
+			function clicka(obj) {
+				if(login){
+					var alt=obj.alt
+					$.ajax({
+						type: "post",
+						url: url + "/forest/forestClickGood/add.json",
+						beforeSend: function(xhr) {
+							xhr.setRequestHeader("Authorization", token);
+						},
+						data: {
+							commentsId: alt
+						},
+						
+						success: function(data) {
+							console.log(data)
+							layer.msg(data.msg)
+							if(data.result==true){
+								obj.src="img/icon_like_click.png"
+								var number =Number(obj.parentNode.children[1].innerHTML)+1
+								obj.parentNode.children[1].innerHTML=number
+								
+							}
+						}
+					});
+				}else{
+					$('.click').attr('href', 'tel:login')
+				}
+			}
+			
+			
+
+		</script>
+	</body>
+</html>
+
+
+

@@ -1,0 +1,767 @@
+body{
+	position: relative;
+}
+.title {
+	background: #fff;
+	padding: 0.3rem;
+	font-size: 0.32rem;
+	line-height: 0.45rem;
+	font-weight: bolder;
+}
+
+.swiper-wrapper img{
+	width: 100%;
+	display: block;
+}
+.swiper-container1 img{
+	display: block;
+	width: 100%;
+	height: 40%;
+	display: block;
+}
+#banner1{
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	position: fixed;
+	top: 0;
+	display: none;
+	
+}
+
+.atrright{
+	width: 0.22rem;
+	height: .4rem;
+	margin-left: .3rem;
+	margin-top: .7rem;
+	transform: rotateY(180deg);
+}
+.url{
+	width: 100%;
+	display: block;
+}
+.tit {
+	margin-bottom: 0.2rem;
+}
+
+.title .p {
+	font-size: 0.34rem;
+	color: #FF6600;
+}
+.title-1{
+	color: #03AA5E !important;
+	padding: .25rem 0 0.25rem 0.31rem;
+	box-shadow:1px 0px 0px rgba(230,230,230,1);
+}
+.one{
+	display: flex;
+	align-items: center;
+	padding: .3rem 0 0.3rem 0.31rem;
+	border-top: solid 1px #E6E6E6;
+}
+.one .left{
+	width: 0.12rem;
+	height: 0.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.onea{
+	margin-left: 0.25rem;
+	width: 70%;
+	margin-right: 0.1rem;
+}
+
+.equit{
+	height: 1.8rem;
+}
+
+.equit .onea{
+	display: flex;
+	justify-content: space-around;
+}
+.onee{
+	width: 1.3rem;
+	display: flex;
+	align-items: center;
+	color: #999;
+	font-size: 0.3rem;
+}
+.all {
+	display: flex;
+	font-size: 0.28rem;
+	color: #666;
+	font-weight: normal;
+	margin-top: 0.1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.all img {
+	display: block;
+	width: 0.21rem;
+	height: 0.22rem;
+	margin-right: 0.1rem;
+}
+
+.all .allR {
+	flex: 1;
+	text-align: right;
+}
+
+.hdays,
+.baifen,
+.days,
+.mouth {
+	display: none;
+}
+
+.myHave {
+	background: #FFFFFF;
+	margin-top: 0.2rem;
+}
+
+.myHaveT {
+	padding: 0.3rem;
+	color: #4D4D4D;
+	font-size: 0.32rem;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+.myHaveT img {
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+	margin-right: 0.1rem;
+}
+
+.myHaveB {
+	display: flex;
+	padding: 0.4rem;
+	text-align: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.myHaveB p {
+	color: #FF6600;
+	font-size: 0.36rem;
+	font-weight: bolder;
+}
+
+.myHaveB .txtB {
+	margin-top: 0.2rem;
+	color: #999999;
+	font-size: 0.26rem;
+	font-weight: normal;
+}
+
+.myHaveB .colorB {
+	color: #4D4D4D;
+}
+
+.border {
+	width: 1px;
+	height: 0.4rem;
+	background: #E6E6E6;
+}
+
+.mainer{
+	background-color: #fff;
+	margin-top: 0.2rem;
+	padding: 0.35rem;
+	display: none;
+}
+
+.mainer .tab2{
+	font-size: 0.34rem;
+	color: #03AA5E;
+}
+
+.swiper-container2{
+	overflow: hidden;
+	margin-top: 0.3rem;
+}
+
+.scroll p{
+	margin-top: 0.2rem;
+}
+.scroll a{
+	display: block;
+}
+.scroll p:nth-of-type(1){
+	font-size: 0.3rem;
+	color: #333;
+	
+}
+.scroll p:nth-of-type(2){
+	font-size: 0.26rem;
+	color: #FF6600;
+	font-weight: bold;
+	
+}
+.scroll img{
+	width: 2rem;
+	height: 2rem;
+	margin-right: 0.2rem;
+	display: block;
+	object-fit: cover;
+}
+
+#content {
+	background: #FFFFFF;
+	margin-top: 0.2rem;
+	line-height: 0.4rem;
+	padding-bottom: 1rem;
+}
+
+.tabs {
+	height: 0.8rem;
+	line-height: 0.8rem;
+	border-bottom: 1px solid #E6E6E6;
+	background: #FFFFFF;
+	align-items: center;
+	color: #03AA5E;
+	font-size: 0.34rem;
+	padding-left: 0.3rem;
+}
+
+.tabDivs {
+	padding-bottom: 0;
+}
+
+.tabDivs img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.tabDiv {
+	display: none;
+	padding: 0 0.3rem;
+}
+
+.activeDiv {
+	display: block;
+}
+
+.line {
+	display: block;
+	width: 100%;
+}
+
+.tree {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0.4rem 4% 0.18rem 0;
+}
+
+.tree img {
+	display: block;
+	height: 0.32rem;
+	width: 0.32rem;
+}
+
+.tree1 {
+	margin-left: 4%;
+}
+
+.tree2 {
+	margin-left: -10.5%;
+}
+
+.tree3 {
+	width: 0.5rem;
+}
+
+.font {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 0.2rem;
+	margin-bottom: 0.4rem;
+	color: #999999;
+	font-size: 0.23rem;
+}
+
+.font1 {
+	margin-left: 3%;
+}
+
+.font4 {
+	margin-right: 2%;
+}
+
+.green {
+	color: #03AA5E;
+}
+
+.messageList {
+	padding: 0.3rem 0;
+	border-top: 1px solid #E6E6E6;
+	font-size: 0.3rem;
+}
+
+.img {
+	margin-top: 0.2rem;
+}
+
+.img img {
+	display: block;
+	width: 100%;
+}
+
+.tab4 {
+	padding: 0;
+}
+
+.myHaveF {
+	text-align: left;
+}
+
+.myHaveF .colorB {
+	font-size: 0.29rem;
+	font-weight: bolder;
+	margin-left: 0.2rem;
+}
+
+.myHaveBs {
+	border-bottom: 1px solid #E6E6E6;
+}
+
+.table {
+	height: 5rem;
+	margin-top: 0.4rem;
+}
+
+.tabBoxs {
+	display: flex;
+	height: 0.7rem;
+	justify-content: space-around;
+	align-items: center;
+	color: #999999;
+	font-size: 0.3rem;
+}
+
+.tabBoxs .tabBox {
+	flex: 1;
+	height: 100%;
+	background: #fafafa;
+	text-align: center;
+	line-height: 0.7rem;
+	border-top: 1px solid #E6E6E6;
+	border-right: 1px solid #E6E6E6;
+}
+
+.tabBoxs .tabBoxA {
+	border-top: 0;
+	background: #FFFFFF;
+}
+
+
+.navto img {
+	margin-right: 0.1rem;
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+}
+
+.content img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0.2rem 0;
+}
+
+.title .province {
+	color: #666666;
+	font-size: 0.28rem;
+	font-weight: normal;
+}
+
+.p {
+	font-weight: bolder;
+}
+#onea img{
+	width: 1.15rem;
+	height: 1.05rem;
+	display: block;
+}
+.result {
+	margin-top: 0.2rem;
+	background: white;
+	align-items: center;
+}
+
+.result div {
+	font-size: 0.26rem;
+	color: #666;
+	line-height: 0.4rem;
+}
+.three{
+	display: flex;
+}
+.three span{
+	display: block;
+}
+.three img{
+	margin-top: 0.1rem;
+}
+.result img {
+	width: 0.3rem;
+	height: 0.3rem;
+	object-fit: cover;
+	margin-right: 0.1rem;
+}
+.navto {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	height: 0.88rem;
+	font-size: 0.34rem;
+	color: white;
+	background: #03AA5E;
+	justify-content: center;
+	align-items: center;
+}
+
+.navto img {
+	margin-right: 0.1rem;
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+}
+.red {
+	color: #FF0000;
+	display: none;
+}
+
+.img1 {
+	display: block;
+	width: 0.22rem;
+	height: 0.22rem;
+	margin-right: 0.05rem;
+}
+
+.img2 {
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+	margin-right: 0.1rem;
+}
+
+.img3 {
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+	margin-left: 0.1rem;
+}
+
+.img4 {
+	display: block;
+	width: 0.2rem;
+	height: 0.2rem;
+	margin-left: 0.1rem;
+}
+
+.result .resB {
+	font-weight: normal;
+	display: flex;
+	align-items: center;
+	color: #999999;
+	font-size: 0.24rem;
+	margin-top: 0.2rem;
+	text-align: center;
+	justify-content: center;
+}
+
+.border {
+	width: 1px;
+	height: 0.76rem;
+	background: #E6E6E6;
+}
+
+.flexs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.introduce {
+	display: block;
+	width: 100%;
+	margin-top: 0.2rem;
+}
+
+.green {
+	color: #00BB00;
+	display: none;
+}
+
+#interests{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background-color: #fff;
+	width: 100%;
+	height: 9rem;
+	z-index: 999;
+	display: none;
+	
+}
+#interests h1,
+#parn h1,
+#name h1{
+	text-align: center;
+	padding:0.3rem 0;
+	border: 1px solid #e6e6e6 ;
+	font-weight: bold;
+}
+.intt{
+	width: 100%;
+	height: 6.85rem;
+	overflow: scroll;
+}
+.int{
+	display: flex;
+	padding: 0.4rem 0.3rem 0.2rem 0.3rem;
+}
+.int img{
+	width: 1.15rem;
+	height: 1.05rem;
+	display: block;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+.int span{
+	display: flex;
+	align-items: center;
+	margin-left: 0.2rem;
+}
+ .yes{
+	display: block;
+	width: 92%;
+	margin: 0 auto;
+	height: 1rem;
+	background-color: #03AA5E;
+	text-align: center;
+	line-height: 1rem;
+	border-radius:5px;
+	font-size: 0.34rem;
+	color: #fff;
+}
+
+#zhezhao{
+	position: fixed;
+	z-index: 998;
+	top: 0;
+	left: 0;
+	height: 127%;
+	width: 100%;
+	background: #000000;
+	filter: Alpha(opacity=50);
+	opacity: 0.5;
+	display: none;
+}
+#name{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background-color: #fff;
+	width: 100%;
+	height: 8rem;
+	z-index: 999;
+	line-height: 0.4rem;
+	display: none;
+}
+
+.name1{
+	display: flex;
+}
+.name1 img{
+	width: 1.2rem;
+	height: 1.2rem;
+	display: block;
+	margin: 0.2rem;
+}
+.name1 span{
+	width: 75%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.name-tet{
+	padding: 0 0.2rem;
+	color: #333;
+	height: 52%;
+}
+
+#parn{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background-color: #fff;
+	width: 100%;
+	height: 8rem;
+	z-index: 999;
+	line-height: 0.4rem;
+	display: none;
+}
+.parn{
+	height: 5.7rem;
+}
+.parn1{
+	width: 92%;
+	margin: 0 auto;
+	padding: 0.3rem 0;
+	border-bottom: 1px solid #e6e6e6;
+	display: flex;
+}
+.parn2{
+	color: #999;
+	width: 25%;
+	display: block;
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 1rem;
+	line-height: 0.1rem;
+	text-align: center;
+	display: flex;
+	z-index: 998;
+}
+
+.foot1{
+	width: 30%;
+	background-color: #fff;
+	line-height: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.foot1 img{
+	width: 0.3rem;
+	height: 0.3rem;
+	display: block;
+	margin-right: 0.1rem;
+	border: 1px #000 dashed;
+}
+.foot2{
+	width: 70%;
+	text-align: center;
+	line-height: 1rem;
+	color: #fff;
+	background-color: #03AA5E;
+}
+
+.foot1 a{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	color: #4d4d4d;
+	
+}
+.foot2 a{
+	display: block;
+	color: #fff;
+}
+a{
+	text-decoration: none;
+}
+
+#cover {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 18888;
+	background-color: #000000;
+	opacity: 0.7;
+}
+
+#guide {
+	display: none;
+	position: absolute;
+	right: 18px;
+	top: 5px;
+	z-index: 19999;
+}
+
+#guide img {
+	width: 260px;
+	height: 180px;
+}
+#share{
+	position: fixed;
+	bottom: 0;
+	z-index: 10000;
+	width: 100%;
+	height: 4rem;
+	background-color: #fff;
+	display: none;
+}
+#share div{
+	color: #999999;
+	text-align: center;
+	margin-top: 0.5rem;
+	
+}
+#share div img{
+	width: 0.9rem;
+	height: 0.9rem;
+	border: dashed 1px #000;
+}
+
+.shareT {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	padding: 0.3rem 0.7rem 0.2rem 0.7rem;
+}
+
+.shareT img {
+	width: 0.88rem;
+	margin-bottom: 0.24rem;
+}
+
+.shareT a {
+	text-decoration: none;
+}
+
+.shareT p {
+	font-size: 0.22rem;
+	margin-top: 0.2rem;
+	color: #000;
+}
+
+.shareT span {
+	display: block;
+	color: #4D4D4D;
+}
+
+.shareC {
+	height: 0.48rem;
+	line-height: 0.48rem;
+	background: #FFFFFF;
+	border-radius: 10px;
+	margin-top: 0.57rem;
+}
+
+.shareType {
+	display: none;
+}

@@ -1,0 +1,54 @@
+body {
+	background: #FFFFFF;
+	text-align: center;
+	position: relative;
+}
+
+.top {
+	display: block;
+	width: 30%;
+	margin: 0 auto;
+	margin-top: 15%;
+}
+
+h1 {
+	font-size: 0.32rem;
+	color: #4D4D4D;
+	margin-top: 10%;
+}
+
+.fix {
+	height: 0.2rem;
+	width: 100%;
+	background: #F2F2F2;
+	margin-top: 10%;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 0.32rem;
+	margin-top: 10%;
+}
+
+.bottom {
+	display: block;
+	margin-top: 10%;
+	margin: 0 auto;
+	margin-top: 5%;
+	width: 75%;
+}
+
+.center {
+	display: block;
+	width: 5%;
+	margin-top: 10%;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+
+.xx {
+	position: absolute;
+	width: 38%;
+	left: 30.5%;
+	bottom: 6%;
+}

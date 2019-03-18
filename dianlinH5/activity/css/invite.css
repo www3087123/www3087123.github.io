@@ -1,0 +1,106 @@
+.top {
+	position: relative;
+}
+
+.top img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.share {
+	position: absolute;
+	width: 4.3rem;
+	height: 0.9rem;
+	background: url(../image/icon_button.png) no-repeat;
+	background-size: 100% 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: -75%;
+	line-height: 0.9rem;
+	color: #fff;
+	font-size: 0.34rem;
+	text-align: center;
+}
+
+.content {
+	width: 100%;
+	background: url(../image/pic_line.png);
+	background-size: 100%;
+	background-repeat: repeat-y;
+	padding-bottom: 0.4rem;
+}
+
+.center {
+	margin: 0 0.3rem;
+	min-height: 6.6rem;
+	background: #FFFFFF;
+	border-radius: 10px;
+	position: relative;
+	padding: 0 0.4rem;
+}
+
+.centerT {
+	width: 4.46rem;
+	height: 0.58rem;
+	background: url(../image/icon_banner.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: -100%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	line-height: 0.58rem;
+	color: #FFFFFF;
+	font-size: 0.26rem;
+	text-align: center;
+}
+
+.list {
+	width: 100%;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	border-bottom: 1px solid #E6E6E6;
+	text-align: center;
+}
+
+.list div:nth-child(1) {
+	width: 30%;
+}
+
+.list div:nth-child(2) {
+	width: 40%;
+}
+
+.list div:nth-child(3) {
+	width: 30%;
+}
+
+.list div {
+	float: left;
+	height: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.listT {
+	height: 1.28rem;
+	padding-top: 0.29rem;
+	line-height: 0.98rem;
+}
+
+.content .list:last-child {
+	border-bottom: none;
+}
+
+.noList{
+	color: #999999;
+	font-size: 0.3rem;
+	text-align: center;
+	line-height: 6.6rem;
+	display: none;
+}

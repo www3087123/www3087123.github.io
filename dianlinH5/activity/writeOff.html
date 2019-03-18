@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="../css/public.css" />
+	</head>
+	<style>
+		body{
+			background: #FFFFFF;
+			padding: 15%;
+		}
+		h1{
+			font-size: 0.3rem;
+			text-align: center;	
+			margin-top: 1rem;		
+		}
+		
+		input{
+			width: 100%;
+			height: 0.8rem;
+			line-height: 0.8rem;
+			outline: none;
+			border: 1px solid #DEDEDE;
+			margin-top: 1rem;
+			font-size: 0.3rem;
+			padding: 0 0.1rem;
+		}
+		
+		.submit{
+			display: block;
+			width: 100%;
+			height: 0.8rem;
+			line-height: 0.8rem;
+			background: #03AA5E;
+			text-align: center;	
+			border-radius: 10px;	
+			margin-top: 0.5rem;	
+			color: #FFFFFF;
+			
+		}
+		p{
+			margin-top: 0.15rem;
+		}
+	</style>
+	<body>
+		<h1>已核销<span class="count"></span>人</h1>
+		<input type="text" class="cancelCode"/>
+		<a 	class="submit" onclick="cancelCode()">核销</a>
+		<!--<p>文案</p>-->
+	</body>
+</html>
+<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js" ></script>
+<script type="text/javascript" src="../js/url.js" ></script>
+<script type="text/javascript" src="../js/layer.js"></script>
+<link rel="stylesheet" href="../js/skin/layer.css" />
+<script>
+	$.ajax({
+		type:"get",
+		url:url+"/trade/activityOrder/cancelCount",
+		success:function(data){
+			console.log(data)
+			$('.count').html(data.data)
+		}
+	});
+	function cancelCode(){
+		if($('.cancelCode').val()!=''){
+			$.ajax({
+				type:"get",
+				url:url+"/trade/activityOrder/cancelCode",
+				data:{
+					cancelCode:$('.cancelCode').val()
+				},
+				success:function(data){
+					console.log(data)
+					layer.msg(data.msg);
+					location.reload();
+				}
+			});
+		}	
+	}
+</script>

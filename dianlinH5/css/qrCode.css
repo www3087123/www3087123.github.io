@@ -1,0 +1,348 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0 none;
+	font-size: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	max-height: 100000px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
+
+body {
+	/*font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;*/
+	font-family: "Heiti SC";
+	line-height: 1;
+	color: #666666;
+	background-color: #fff;
+	font-size: 0.3rem;
+	text-align: justify;
+	padding-bottom: 1rem;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#top {
+	position: relative;
+	height: 100%;
+	text-align: center;
+	margin-bottom: 0.9rem;
+	display: none;
+}
+
+.bg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.topC {
+	position: absolute;
+	width: 100%;
+	height: 70%;
+	bottom: 20%;
+}
+
+.head {
+	display: block;
+	height: 1.8rem;
+	width: 1.8rem;
+	border-radius: 50%;
+	margin: auto;
+}
+
+.name {
+	color: #fff;
+	font-size: 0.34rem;
+	font-weight: bold;
+	margin-top: 5%;
+}
+
+.time {
+	color: #fff;
+	font-size: 0.24rem;
+	margin-top: 7%;
+}
+
+.box {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 5%;
+	padding: 0 0.3rem;
+	height: 1.4rem;
+}
+
+.box img {
+	display: block;
+	height: 1.4rem;
+	width: 1.3rem;	
+	border-radius: 10px;
+}
+
+.tit {
+	position: absolute;
+	width: 100%;
+	bottom: -5%;
+}
+
+.tit p {
+	color: #333333;
+	font-size: 0.28rem;
+}
+
+.tit .t_f {
+	color: #03AA5E;
+	font-weight: bold;
+	font-size: 0.34rem;
+	margin-bottom: 0.28rem;
+}
+
+.n_t {
+	height: 1.64rem;
+	width: 100%;
+	background: url(../images/h5_bg1.png) no-repeat;
+	background-size: 100%;
+	display: none;
+}
+
+.tits {
+	padding-top: 0.38rem;
+	text-align: center;
+}
+
+.tits p {
+	color: #333333;
+	font-size: 0.28rem;
+}
+
+.tits .t_f {
+	color: #03AA5E;
+	font-weight: bold;
+	font-size: 0.34rem;
+	margin-bottom: 0.28rem;
+}
+
+.bd {
+	height: 1.65rem;
+	padding: 0.3rem 0.4rem;
+	display: flex;
+	margin: 0 0.3rem;
+	background: #E4FEF2;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 0.26rem;
+	margin-bottom: 0.4rem;
+}
+
+.bd_t {
+	height: 0.7rem;
+	width: 100%;
+	margin-bottom: 0.15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	color: #03AA5E;
+	font-size: 0.28rem;
+}
+
+.bd_t img {
+	display: block;
+	width: 0.6rem;
+	height: 0.6rem;
+	margin: 0 auto;
+}
+
+#img1 {
+	width: 100%;
+	display: block;
+	padding: 0 0.3rem;
+	height: auto;
+}
+
+.bds {
+	justify-content: space-around;
+	margin-top: 0.5rem;
+}
+
+.bds p {
+	font-size: 0.26rem;
+	color: #666666;
+}
+
+.bds .bd_g {
+	color: #03AA5E;
+	font-size: 0.34rem;
+	font-weight: bold;
+	margin-bottom: 0.2rem;
+}
+
+.rights {
+	display: flex;
+	height: 0.45rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.rights img {
+	display: block;
+	width: 0.52rem;
+	height: 0.45rem;
+}
+
+.rights span {
+	color: #03AA5E;
+	font-size: 0.34rem;
+	font-weight: bold;
+	margin: 0 0.22rem;
+}
+
+.boxs {
+	margin-top: 0.32rem;
+	margin-bottom: 0.4rem;
+}
+
+.boxs div {
+	border: 2px solid #03AA5E;
+	text-align: center;
+}
+
+.company {
+	display: flex;
+	padding: 0.4rem 0.3rem;
+	justify-content: space-between;
+}
+
+.c_l {
+	display: block;
+	width: 2rem;
+	height: 1.6rem;
+	border-radius: 5px;
+	margin-right: 0.2rem;
+	flex-shrink: 0;
+}
+
+.company .c_r {
+	flex: 1;
+}
+
+.company span {
+	display: block;
+	font-size: 0.32rem;
+	color: #333333;
+	font-weight: bold;
+}
+
+.li {
+	display: flex;
+	justify-content: flex-start;
+	color: #666666;
+	font-size: 0.26rem;
+	margin-top: 0.18rem;
+}
+
+.li img {
+	display: block;
+	width: 0.2rem;
+	height: 0.2rem;
+	margin-right: 0.1rem;
+	flex-shrink: 0;
+	margin-top: 0.05rem;
+}
+
+.li div {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	line-height: 0.3rem;
+}
+
+#bottom {
+	display: block;
+	text-decoration: none;
+	width: 100%;
+	height: 0.97rem;
+	line-height: 0.97rem;
+	background: #03AA5E;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 0.34rem;
+	font-weight: bold;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}

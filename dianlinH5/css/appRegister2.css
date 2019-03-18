@@ -1,0 +1,84 @@
+body {
+	background: #76C25E;
+}
+
+.inputBox {
+	width: 80%;
+	height: 0.9rem;
+	padding-left: 0.4rem;
+	padding-right: 0.2rem;
+	border-radius: 0.45rem;
+	background: #FFFFFF;
+	margin: 0 auto;
+	margin-top: 0.3rem;
+	overflow: hidden;
+	font-size: 0.32rem;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.codes {
+	width: 3.5rem;
+	height: 0.34rem;
+	line-height: 0.32rem;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #03AA5E;
+}
+
+.cover{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 3rem;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #03AA5E;
+	background: #FFFFFF;
+	display: none;
+}
+
+input {
+	height: 0.9rem;
+	border: none;
+	outline: none;
+	color: #03AA5E;
+	font-size: 0.32rem;
+	width: 100%;
+}
+
+input::-webkit-input-placeholder {
+	color: #6CC89E;
+}
+
+input::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #6CC89E;
+}
+
+input:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #6CC89E;
+}
+
+input:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #6CC89E;
+}
+
+.sub {
+	width: 80%;
+	height: 0.9rem;
+	background: url(../images/icon_buttons.png) no-repeat;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	margin-top: 0.4rem;
+	color: #FEFEFE;
+	font-size: 0.34rem;
+	line-height: 0.9rem;
+	text-align: center;
+	border-radius: 0.45rem;
+}

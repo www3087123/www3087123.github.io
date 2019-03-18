@@ -1,0 +1,30 @@
+img{
+	width: 1.8rem;
+	height: 1.7rem;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0.4rem;
+}
+header{
+	margin-top: 1rem;
+	text-align: center;
+}
+.main a:nth-of-type(1){
+	width: 3.6rem;
+	height: 0.8rem;
+	margin: 0 auto;
+	margin-top: 0.6rem;
+	display: block;
+	color: #fff;
+	line-height: 0.8rem;
+	text-align: center;
+	background-color: #03AA5E;
+	border-radius:5px;
+}
+
+.main a:nth-of-type(2){
+	display: block;
+	text-align: center;
+	color: #03AA5E;
+	margin-top: 0.6rem;
+}

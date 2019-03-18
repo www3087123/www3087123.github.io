@@ -1,0 +1,317 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0 none;
+	font-size: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	max-height: 100000px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+	line-height: 1;
+	color: #4D4D4D;
+	background-color: #FFD586;
+	font-size: 0.28rem;
+	position: relative;
+}
+
+img{
+	display: block;
+	width: 100%;
+}
+
+header{
+	position: absolute;
+	right: 5%;
+	top: 0.9%;
+	font-size: 0.28rem;
+	color: #FC9542;
+	width: 0.6rem;
+}
+
+
+.detali{
+	width: 92%;
+	margin: 0 auto;
+	background-color: #FDFAED;
+	border: 3px solid #DF8E54;
+	border-radius: 40px;
+	margin-bottom: 0.2rem;
+}
+
+.me{
+	display: none;
+}
+
+.top{
+	display: flex;
+	align-items: center;
+	padding-left: 0.35rem;
+	padding-top: 0.35rem;
+	padding-right: 0.2rem;
+}
+.top-img{
+	width: 0.99rem;
+	height: 0.99rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-right: 0.2rem;
+	
+}
+.vatar{
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 50%;
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	left: 14%;
+}
+.up{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+}
+.no{
+	position: absolute;
+	z-index: 1;
+}
+.top-po{
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 50%;
+	color: #fff;
+	font-size: 0.22rem;
+}
+.img4{
+	width: 0.88rem;
+	height: 1rem;
+	left: 0.1rem;
+	position: absolute;
+	z-index: 1;
+}
+.first{
+	color: #fff;
+	font-size: 0.36rem;
+	text-align: center;
+	margin-top: -10%;
+	margin-bottom: 0.8rem;
+}
+@media  (min-width: 800px) {
+	.first{
+		margin-top: -9%;
+	}
+}
+@media  (max-width:640px ) {
+	.first{
+		margin-top: -11%;
+	}
+}
+.top-center{
+	flex:1;
+}
+.top-right img{
+	margin-right: 0.1rem;
+}
+.redx{
+	width: 0.3rem;
+	height: 0.26rem;
+}
+.xcolor{
+	color: #FF5A00;
+}
+.center-tit{
+	font-weight: bold;
+	color: #4d4d4d;
+	font-size: 0.28rem;
+	margin-top: 0.1rem;
+}
+.center-time{
+	margin-top: 0.15rem;
+	width: 48%;
+	height: 0.26rem;
+	overflow: hidden;
+}
+.blackx{
+	width: 0.3rem;
+	height: 0.26rem;
+}
+.top-right{
+	display: flex;
+}
+.main{
+	width: 88.5%;
+	margin: 0 auto;
+	line-height:0.41rem;
+	font-size: 0.32rem;
+	font-weight: bold;
+	margin-top: 0.25rem;
+}
+.foot{
+	display: flex;
+	align-items: center;
+	padding: 0 0.3rem 0.4rem;
+	margin-top: 0.25rem;
+}
+.foot img{
+	width: 30%;
+	border-radius: 10px;
+	margin-left: 0.2rem;
+	object-fit: cover;
+}
+.foot img:nth-of-type(1){
+	margin-left: 0;
+}
+.foot1{
+	display: flex;
+	align-items: center;
+	padding: 0 0.3rem 0.4rem;
+	margin-top: 0.25rem;
+}
+.foot1 img{
+	width: 30%;
+	height: 2rem;
+	border-radius: 10px;
+	margin-left: 0.2rem;
+	object-fit: cover;
+}
+.foot1 img:nth-of-type(1){
+	margin-left: 0;
+}
+
+#term{
+	padding: 0 0.3rem;
+	background-color: #fff;
+	padding-top: 0.5rem;
+	padding-bottom: 0.3rem;
+	display: none;
+	position: fixed;
+	bottom: 0;
+	z-index: 999;
+}
+#term img{
+	width: 0.1rem;
+	height: 0.18rem;
+	margin: 0 0.1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#term h1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #C67135;
+	font-weight: bold;
+	font-size: 0.34rem;
+	position: relative;
+}
+#term p{
+	line-height: 0.45rem;
+	font-weight: bold;
+}
+#term h2{
+	color: #C67135;
+	font-weight: bold;
+	margin: 0.05rem 0;
+}
+#term img:nth-of-type(3){
+	width: 0.24rem;
+	height: 0.24rem; 
+	
+}
+#fix{
+	position: absolute;
+	right: 0.3rem;
+}
+#zhezhao {
+	position: fixed;
+	z-index: 998;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #000000;
+	filter: Alpha(opacity=50);
+	opacity: 0.5;
+	display: none;
+}
+.show{
+	color: red;
+}
+
+.thumbs,.thumbs2{
+	display: none;
+}
+
+#container{
+	margin-top: 0.35rem;
+}
+@media (max-width:640px ) {
+	.foot1 img{
+		height: 1.56rem;
+	}
+}

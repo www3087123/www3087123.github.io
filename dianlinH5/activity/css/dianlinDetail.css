@@ -1,0 +1,102 @@
+.title {
+	background: #fff;
+	padding: 0.3rem;
+	font-size: 0.34rem;
+
+	line-height: 0.45rem;
+	font-weight: bolder;
+}
+
+.titList {
+	display: flex;
+	padding: 0.3rem;
+	border-top: 1px solid #E6E6E6;
+	background: #fff;
+	align-items: center;
+	font-size: 0.3rem;
+}
+
+.titList img {
+	width: 0.2rem;
+	height: 0.2rem;
+	margin-right: 0.1rem;
+}
+
+.hs {
+	margin-top: 0.2rem;
+}
+
+#content {
+	padding: 0.3rem;
+	background: #FFFFFF;
+}
+
+.divt {
+	display: flex;
+	padding: 0.3rem;
+	background: #fff;
+	align-items: center;
+	font-size: 0.3rem;
+	font-weight: bolder;
+	color: #FF6600;
+	padding-top: 0;
+}
+
+.presentPrice {
+	font-size: 0.4rem;
+}
+
+.originalPrice {
+	color: #999;
+	text-decoration: line-through;
+}
+
+.navto {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	height: 0.98rem;
+	font-size: 0.34rem;
+	color: #4D4D4D;
+	background: #03aa5e;
+}
+
+.navto div {
+	flex: 1;
+	display: flex;
+	height: 0.98REM;
+	justify-content: center;
+	align-items: center;
+}
+
+.service {
+	background: #FFFFFF;
+}
+
+.buy {
+	background: #03AA5E;
+	color: #FFFFFF;
+}
+
+
+
+.navto img {
+	margin-right: 0.1rem;
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+}
+
+.buys {
+	background: #CCCCCC;
+	color: #FFFFFF;
+}
+
+#content img{
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0.2rem 0;
+}
+

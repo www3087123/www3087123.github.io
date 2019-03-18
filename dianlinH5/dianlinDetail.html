@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/dianlinDetail.css" />
+		<link rel="stylesheet" type="text/css" href="dist/css/swiper.min.css"/>
+	</head>
+
+	<body >
+		<div id="banner">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper"></div>
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<div id="banner1">
+			<div class="swiper-container1">
+			    <div class="swiper-wrapper"> </div>
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		
+		
+		<div class="title">
+			<p class="tit"></p>
+			<div class="all">
+				<div style="color: #999999;font-size: 0.24rem;display: flex;align-items: baseline; ">
+					<p class="p">￥<span class="price"></span></p>
+				</div>
+				<div style="display: flex;align-items: center;">
+					<span class="province"></span>					
+				</div>
+			</div>
+		</div>
+		<div class="result">
+			<div class="title-1">基本信息</div>
+			<div class="one NAME">
+				<span class="onee fruitName" ></span><span class="onea" id="fruitDescribe"></span><img src="images/home_detail_icon_arr_r.png" class="left"/>
+			</div>
+			<div class="one extend">
+				<span class="onee" id="parameter">参数说明</span><span class="onea"><span class="extendOneKey"></span>、<span class="extendTwoKey"></span>...</span><img src="images/home_detail_icon_arr_r.png" class="left"/>
+			</div>
+			<div class="one equit">
+				<span class="onee" id="bring">养树权益</span>
+				<span class="onea" id="onea">
+					<img  class="equitiesOne"/>
+					<img  class="equitiesTwo"/>
+					<img  class="equitiesthree"/>
+					<img  class="equitiesFour"/>
+				</span>
+				<img src="images/home_detail_icon_arr_r.png" class="left"/>
+			</div>
+		</div>
+		<div class="mainer">
+			<div class="tab2">树周边</div>
+			<div class="swiper-container2">
+			    <div class="swiper-wrapper scroll">
+			     	
+			    </div>
+			    <div class="swiper-pagination"></div>
+			    
+			</div>
+		</div>
+		<div id="content">
+			<div class="tabs">
+				详情
+			</div>
+			<div class="tabDivs"></div>
+		</div> 
+		
+		<footer>
+			<div class="foot1"><a ><img src="images/mine_icon_serive@2x.png"/>客服</a></div>
+			<div class="foot2"><a >我要养树</a></div>
+		</footer>
+		
+		<!--权益说明-->
+		<div id="interests">
+			<h1>权益说明</h1>
+			<div class="intt">
+				<div class="int">
+					<img  class="equitiesOne"/>
+					<span class="equitiesOneDescribe"></span>
+				</div>
+				<div class="int">
+					<img  class="equitiesTwo"/>
+					<span class="equitiesTwoDescribe"></span>
+				</div>
+				<div class="int">
+					<img  class="equitiesthree"/>
+					<span class="equitiesthreeDescribe"></span>
+				</div>
+				<div class="int">
+					<img  class="equitiesFour"/>
+					<span class="equitiesFourDescribe"></span>
+				</div>
+				
+			</div>
+			<a class="yes">完成</a>
+		</div>
+		
+		
+		<!--名字-->
+		<div id="name">
+			<h1  class="fruitName"></h1>
+			<div class="name1">
+				<img class="productImg"/>
+				<span class="fruitDescribe"></span>
+			</div>
+			<div class="name-tet">
+				<p class="fruitDetail"></p>
+			</div>
+			
+			<a class="yes">完成</a>
+		</div>
+		
+		<!--参数说明-->
+		<div id="parn">
+			<h1>参数说明</h1>
+			<div class="parn">
+				<div class="parn1">
+					<span class="parn2 extendOneKey"></span>
+					<span class="extendOneValue"></span>
+				</div>
+				<div class="parn1">
+					<span class="parn2 extendTwoKey"></span>
+					<span class="extendTwoValue"></span>
+				</div>
+				<div class="parn1">
+					<span class="parn2 extendThreeKey"></span>
+					<span class="extendThreeValue"></span>
+				</div>
+				<div class="parn1">
+					<span class="parn2 extendFourKey"></span>
+					<span class="extendFourValue"></span>
+				</div>
+				<div class="parn1">
+					<span class="parn2 extendFiveKey"></span>
+					<span class="extendFiveValue"></span>
+				</div>
+			</div>
+			<a class="yes">完成</a>
+		</div>
+		<!--遮罩-->
+		<div id="zhezhao"></div>
+		
+	</body>
+
+</html>
+<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="dist/js/swiper.min.js"></script>
+<script type="text/javascript" src="js/url.js"></script>
+
+<script>
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	var termId = getQueryString("id");
+
+	var sharePic='';
+	var shareTit='';
+	$.ajax({
+		type: "post",
+		url: url + "/forest/term/get",
+		data: {
+			forestTermId: termId
+		},
+		
+		success: function(data) {
+			console.log(data);
+			$('.fruitName').html(data.data.fruitName);
+			$('#fruitDescribe').html(data.data.fruitDescribe);
+			$('.extendOneKey').html(data.data.extendOneKey);
+			$('.extendTwoKey').html(data.data.extendTwoKey);
+			
+			//权益说明
+			$('.equitiesOne').attr('src',data.data.equitiesOne)
+			$('.equitiesTwo').attr('src',data.data.equitiesTwo)
+			$('.equitiesthree').attr('src',data.data.equitiesthree)
+			$('.equitiesFour').attr('src',data.data.equitiesFour)
+			$('.equitiesOneDescribe').html(data.data.equitiesOneDescribe)
+			$('.equitiesTwoDescribe').html(data.data.equitiesTwoDescribe)
+			$('.equitiesthreeDescribe').html(data.data.equitiesthreeDescribe)
+			$('.equitiesFourDescribe').html(data.data.equitiesFourDescribe)
+			
+			//参数说明
+			$('.extendOneKey').html(data.data.extendOneKey)
+			$('.extendTwoKey').html(data.data.extendTwoKey)
+			$('.extendThreeKey').html(data.data.extendThreeKey)
+			$('.extendFourKey').html(data.data.extendFourKey)
+			$('.extendFiveKey').html(data.data.extendFiveKey)
+			$('.extendOneValue').html(data.data.extendOneValue)
+			$('.extendTwoValue').html(data.data.extendTwoValue)
+			$('.extendThreeValue').html(data.data.extendThreeValue)
+			$('.extendFourValue').html(data.data.extendFourValue)
+			$('.extendFiveValue').html(data.data.extendFiveValue)
+			
+			$('.fruitDescribe').html(data.data.fruitDescribe)
+			$('.fruitDetail').html(data.data.fruitDetail)
+			$('.province').html(data.data.province);
+			$('.tit').html(data.data.termName);
+			$('.goodsName').html(data.data.goodsName)
+			$('.price').html(data.data.price+'/年');
+			$('.tabDivs').html(data.data.content)
+			$('.fixForestry').html(data.data.fixForestry)
+			$('.fixForestryUnits').html(data.data.fixForestryUnits)
+			$('.expireTime').html(data.data.expireTime)
+			
+			$('.img2').attr('src',data.data.icon);
+			$('.img3,.img4').attr('src',data.data.capacityIcon);
+			$('.forestry').html(data.data.forestry);
+			$('.forestryUnits').html('1'+data.data.forestryUnits+'='+data.data.capacityRate);
+			$('.capacity').html(data.data.capacity);
+			$('body').show();
+			
+			str=data.data.productImg
+			var strs= new Array();
+			strs=str.split(",");
+			for (i=0;i<strs.length ;i++ ){
+				$('.productImg').attr('src',data.data.icon);
+				var list = '<div class="swiper-slide"><img src="'+strs[i]+'"/></div>'
+				$('#banner .swiper-wrapper').append(list)
+				$('#banner1 .swiper-wrapper').append(list)
+			}
+			swiper()
+			
+			for(a=0;a<data.data.goodsList.length;a++){
+				if(a>=0){
+					$('.mainer').show()
+				}
+				var gooodsList='<div class="swiper-slide"><a href="tel:'+
+				data.data.goodsList[a].goodsId+'"><img src="'+
+				data.data.goodsList[a].url+'" /><p>'+
+				data.data.goodsList[a].title+'</p><p>￥'+
+				data.data.goodsList[a].price+'</p></a></div>'
+				$('.scroll').append(gooodsList)
+			}
+		}
+	});
+
+	$('#banner').click(function(){
+		$('#banner1').show()
+		$('#banner').hide()
+		$('#banner1').css('z-index','9999')
+	})
+	
+	$('.NAME').click(function(){
+		$('#name,#zhezhao').show()
+	})
+	
+	$('.extend').click(function(){
+		$('#parn,#zhezhao').show()
+	})
+	
+	$('.equit').click(function(){
+		$('#interests,#zhezhao').show()
+	})
+	
+	$('#banner1').click(function(){
+		$('#banner1').hide()
+		$('#banner').show()
+	})
+	
+	$('.yes').click(function(){
+		$('#interests,#term,#parn,#name,#zhezhao').hide()
+	})
+	
+	
+
+	function swiper(){
+		var swiper = new Swiper('.swiper-container', {
+			autoHeight:true,
+			observer: true,
+			observeParents: true,
+		    autoplay: {		    	
+		      delay: 2500,
+		      disableOnInteraction: false,
+		    },
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+	    });
+	    
+	    var swiper = new Swiper('.swiper-container1', {
+	    	autoHeight:true,
+	    	observer: true,
+	    	observeParents: true,
+		    autoplay: {		    
+		      delay: 2500,
+		      disableOnInteraction: false,
+		    },
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+	    });
+	    
+	    var swiper = new Swiper('.swiper-container2', {
+	      	slidesPerView: 3,
+	      	spaceBetween: 30,
+	      	observer: true,
+			observeParents: true,
+	      	pagination: {
+	        	el: '.swiper-pagination',
+	        	clickable: true,
+	      	},
+	    });
+	}
+			
+	
+	$('.foot1 a').click(function(){
+		$(this).attr('href','tel:service')
+	})
+	$('.foot2 a').click(function(){
+		$(this).attr('href','tel:adopt')
+	})
+
+	
+</script>

@@ -1,0 +1,85 @@
+body {
+	background: #03AA5E;
+}
+
+#content {
+	margin: 0.6rem 0.3rem 1.3rem 0.3rem;
+	background: #FFFFFF;
+	padding: 0.44rem 0.3rem 0.5rem 0.3rem;
+	border-radius: 5px;
+}
+
+img {
+	display: block;
+	width: 2.2rem;
+	height: 2.2rem;
+	margin: 0 auto;
+}
+
+.bottom .s{
+	font-size: 0.36rem;
+	color: #4D4D4D;
+	font-weight: bolder;
+	margin-top: 0.35rem;
+}
+
+.top {
+	padding-bottom: 0.4rem;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+.top p {
+	margin-top: 0.3rem;
+	text-align: center;
+}
+
+.top .name {
+	font-size: 0.34rem;
+	font-weight: bolder;
+}
+
+.bottom {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.bottom div {
+	padding-top: 0.41rem;
+	width: 33%;
+}
+
+.bottom div:nth-of-type(2){
+	text-align: center;
+}
+
+.bottom div:nth-of-type(3){
+	text-align: right;
+}
+
+.bottom p {
+	font-size: 0.33rem;
+	color: #4D4D4D;
+	margin-top: 0.35rem;
+}
+
+.bottom span {
+	font-size: 0.26rem;
+	color: #666;
+}
+
+.txt {
+	font-size: 0.26rem;
+	color: #4D4D4D;
+	margin-top: 0.48rem;
+	line-height: 0.36rem;
+}
+
+#zd{
+	width: 100%;
+}
+.expireTime{
+	overflow: hidden;
+	height: 0.37rem;
+}

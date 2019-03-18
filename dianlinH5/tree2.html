@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>树名片</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/tree.css"/>
+	</head>
+	<body>
+		<div id="content">
+			<div class="top">
+				<img class="img"/>
+				<p class="name"></p>
+				<p>NO.<span class="code"></span></p>
+			</div>	
+			<div class="bottom">
+				<div>
+					<span>1年减少碳排放</span>
+					<p><span class="lowCarbon s"></span>g</p>
+				</div>
+				<div>
+					<span>树龄</span>
+					<p><span class="age s"></span>年</p>
+				</div>
+				<div>
+					<span>持有有效期</span>
+					<p class="expireTime"></p>
+				</div>
+				
+				<div id="zd">
+					<span>种植地</span>
+					<p class="cultivatedLand"></p>
+				</div>
+			</div>
+			<p class="txt"></p>
+		</div>
+		
+		<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="js/url.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.cookie.js" ></script>
+		
+		<script type="text/javascript">
+			function getQueryString(name) {
+		    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+		    var r = window.location.search.substr(1).match(reg);
+				if (r != null) {
+				    return unescape(r[2]);
+				}
+			    return null;
+			}	
+			
+			var treeId = getQueryString("treeId");
+			var termId = getQueryString("termId");
+		
+				$.ajax({
+					type: "get",
+					url: url + "/forest/tree/treeCard",
+					data:{
+						treeId:treeId,
+						termId:termId
+					},
+					success: function(data) {
+						console.log(data);
+						$('.lowCarbon').html(data.data.lowCarbon)
+						$('.age').html(data.data.age)
+						$('.cultivatedLand').html(data.data.cultivatedLand)
+						$('.name').html(data.data.treeName)
+						$('.code').html(data.data.code)
+						$('.img').attr('src',data.data.icon)
+						$('.txt').html(data.data.treeDescribe)
+						$('.expireTime').html(data.data.expireTime)
+					}
+				})
+			
+		</script>
+	</body>
+</html>
+<!--termId
+treeId-->

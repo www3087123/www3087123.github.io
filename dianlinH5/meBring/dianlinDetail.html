@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>资产树详情</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="../css/public.css" />
+		<link rel="stylesheet" href="../css/dianlinDetail.css" />
+		<link rel="stylesheet" type="text/css" href="../dist/css/swiper.min.css"/>
+	</head>
+
+	<body >
+		<div id="banner">
+			<div class="swiper-container" id="swiper-container-id">
+			    <div class="swiper-wrapper"></div>
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<div id="banner1">
+			<div class="swiper-container1">
+			    <div class="swiper-wrapper"> </div>
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		
+		<div class="title">
+			<p class="tit"></p>
+			<div class="all">
+				<div style="color: #999999;font-size: 0.24rem;display: flex;align-items: baseline; ">
+					
+					<p class="p">￥<span class="price"></span></p>
+				</div>
+				<div style="display: flex;align-items: center;">
+					<span class="province"></span>					
+				</div>
+			</div>
+		</div>
+		<div class="result">
+			<div class="title-1">基本信息</div>
+			<div class="one NAME">
+				<span class="onee fruitName" ></span><span class="onea" id="fruitDescribe"></span><img src="images/home_detail_icon_arr_r.png" class="left"/>
+			</div>
+			<div class="one extend">
+				<span class="onee" id="parameter">参数说明</span><span class="onea"><span class="extendOneKey"></span>、<span class="extendTwoKey"></span>...</span><img src="images/home_detail_icon_arr_r.png" class="left"/>
+			</div>
+			<div class="one equit">
+				<span class="onee" id="bring">认养权益</span>
+				<span class="onea" id="onea">
+					<img  class="equitiesOne"/>
+					<img  class="equitiesTwo"/>
+					<img  class="equitiesthree"/>
+					<img  class="equitiesFour"/>
+				</span>
+				<img src="images/home_detail_icon_arr_r.png" class="left"/>
+			</div>
+		</div>
+		<div class="mainer">
+			<div class="tab2">树周边</div>
+			<div class="swiper-container2">
+			    <div class="swiper-wrapper scroll">
+			      
+			    </div>
+			    <div class="swiper-pagination"></div>
+			    
+			</div>
+		</div>
+		<div id="content">
+			<div class="tabs">
+				详情
+			</div>
+			<div class="tabDivs"></div>
+		</div> 
+		
+		<footer>
+			<div class="foot1 " onclick="_system._guide(true)"><a ><img src="images/forest_nav_icon_share1.png"  style="border: 0;"/>分享</a></div>
+			<div class="foot2"><a >我要认养</a></div>
+		</footer>
+		
+		<!--权益说明-->
+		<div id="interests">
+			<h1>权益说明</h1>
+			<div class="intt">
+				<div class="int">
+					<img  class="equitiesOne"/>
+					<span class="equitiesOneDescribe"></span>
+				</div>
+				<div class="int">
+					<img  class="equitiesTwo"/>
+					<span class="equitiesTwoDescribe"></span>
+				</div>
+				<div class="int">
+					<img  class="equitiesthree"/>
+					<span class="equitiesthreeDescribe"></span>
+				</div>
+				<div class="int">
+					<img  class="equitiesFour"/>
+					<span class="equitiesFourDescribe"></span>
+				</div>
+				
+			</div>
+			<a class="yes">完成</a>
+		</div>
+		
+		<!--名字-->
+		<div id="name">
+			<h1  class="fruitName"></h1>
+			<div class="name1">
+				<img class="productImg"/>
+				<span class="fruitDescribe"></span>
+			</div>
+			<div class="name-tet">
+				<p class="fruitDetail"></p>
+			</div>
+			
+			<a class="yes">完成</a>
+		</div>
+		
+		<!--参数说明-->
+		<div id="parn">
+			<h1>参数说明</h1>
+			<div class="parn">
+				<div class="parn1">
+					<span class="parn2 extendOneKey"></span>
+					<span class="extendOneValue"></span>
+				</div>
+				<div class="parn1">
+					<span class="parn2 extendTwoKey"></span>
+					<span class="extendTwoValue"></span>
+				</div>
+				<div class="parn1">
+					<span class="parn2 extendThreeKey"></span>
+					<span class="extendThreeValue"></span>
+				</div>
+				<div class="parn1">
+					<span class="parn2 extendFourKey"></span>
+					<span class="extendFourValue"></span>
+				</div>
+				<div class="parn1">
+					<span class="parn2 extendFiveKey"></span>
+					<span class="extendFiveValue"></span>
+				</div>
+			</div>
+			<a class="yes">完成</a>
+		</div>
+		
+		<!--遮罩-->
+		<div id="zhezhao"></div>
+		<div id="cover"></div>
+		<div id="guide"><img src="images/guide1.png"></div>
+		
+	</body>
+
+</html>
+<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="../dist/js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+
+<script>
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	var termId = getQueryString("termId");
+	var userId = $.cookie('userId');
+	var inviteId = getQueryString("inviteId");
+	var authorization = $.cookie('authorization');
+	$.cookie('inviteId', inviteId, {
+		expires: 7,
+		path: '/'
+	});
+	
+	if(authorization!=null&&authorization!=undefined&&authorization!=''){
+		var login=true
+	}else{
+		var login = false
+	};
+	var title='';
+	var sharePic='';
+	var price='';
+	
+	$.ajax({
+		type: "post",
+		url: url + "/forest/term/get",
+		data: {
+			forestTermId: termId
+		},
+		async:false,
+		success: function(data) {
+			console.log(data);
+			$('.fruitName').html(data.data.fruitName);
+			$('#fruitDescribe').html(data.data.fruitDescribe);
+			$('.extendOneKey').html(data.data.extendOneKey);
+			$('.extendTwoKey').html(data.data.extendTwoKey);
+			
+			//权益说明
+			$('.equitiesOne').attr('src',data.data.equitiesOne)
+			$('.equitiesTwo').attr('src',data.data.equitiesTwo)
+			$('.equitiesthree').attr('src',data.data.equitiesthree)
+			$('.equitiesFour').attr('src',data.data.equitiesFour)
+			$('.equitiesOneDescribe').html(data.data.equitiesOneDescribe)
+			$('.equitiesTwoDescribe').html(data.data.equitiesTwoDescribe)
+			$('.equitiesthreeDescribe').html(data.data.equitiesthreeDescribe)
+			$('.equitiesFourDescribe').html(data.data.equitiesFourDescribe)
+			
+			//参数说明
+			$('.extendOneKey').html(data.data.extendOneKey)
+			$('.extendTwoKey').html(data.data.extendTwoKey)
+			$('.extendThreeKey').html(data.data.extendThreeKey)
+			$('.extendFourKey').html(data.data.extendFourKey)
+			$('.extendFiveKey').html(data.data.extendFiveKey)
+			$('.extendOneValue').html(data.data.extendOneValue)
+			$('.extendTwoValue').html(data.data.extendTwoValue)
+			$('.extendThreeValue').html(data.data.extendThreeValue)
+			$('.extendFourValue').html(data.data.extendFourValue)
+			$('.extendFiveValue').html(data.data.extendFiveValue)		
+			$('.fruitDescribe').html(data.data.fruitDescribe);
+			$('.fruitDetail').html(data.data.fruitDetail);
+			$('.province').html(data.data.province);
+			$('.tit').html(data.data.termName);
+			$(document).attr('title',data.data.termName);
+			$('.goodsName').html(data.data.goodsName);
+			$('.price').html(data.data.price);
+			$('.tabDivs').html(data.data.content);
+			$('.fixForestry').html(data.data.fixForestry);
+			$('.fixForestryUnits').html(data.data.fixForestryUnits);
+			$('.expireTime').html(data.data.expireTime);			
+			$('.img2').attr('src',data.data.icon);
+			$('.img3,.img4').attr('src',data.data.capacityIcon);
+			$('.forestry').html(data.data.forestry);
+			$('.forestryUnits').html('1'+data.data.forestryUnits+'='+data.data.capacityRate);
+			$('.capacity').html(data.data.capacity);
+			$('body').show();		
+			str=data.data.productImg
+			var strs= new Array();
+			strs=str.split(",");
+			for (i=0;i<strs.length ;i++ ){
+				$('.productImg').attr('src',data.data.icon);
+				var list = '<div class="swiper-slide"><img src="'+strs[i]+'"/></div>'
+				$('#banner .swiper-wrapper').append(list)
+				$('#banner1 .swiper-wrapper').append(list)
+			};
+			swiper();
+			
+			for(a=0;a<data.data.goodsList.length;a++){
+				if(a>=0){
+					$('.mainer').show()
+				}
+				var gooodsList='<div class="swiper-slide"><a href="mall2.html?goodsId='+
+				data.data.goodsList[a].goodsId+'"><img src="'+
+				data.data.goodsList[a].url+'"/><p>'+
+				data.data.goodsList[a].title+'</p><p>￥'+
+				data.data.goodsList[a].price+'</p></a></div>'
+				$('.scroll').append(gooodsList)
+			}
+			title=data.data.termName;
+			sharePic=data.data.icon;
+		}
+	});
+
+
+	$('#banner').click(function(){
+		$('#banner1').show()
+		$('#banner').hide()
+		$('#banner1').css('z-index','9999')
+	})
+	
+	$('.NAME').click(function(){
+		$('#name,#zhezhao').show()
+	})
+	
+	$('.extend').click(function(){
+		$('#parn,#zhezhao').show()
+	})
+	
+	$('.equit').click(function(){
+		$('#interests,#zhezhao').show()
+	})
+	
+	$('#banner1').click(function(){
+		$('#banner1').hide()
+		$('#banner').show()
+	})
+	
+	$('.yes').click(function(){
+		$('#interests,#term,#parn,#name,#zhezhao').hide()
+	})
+
+	$('.foot2 a').click(function(){
+		if(login){
+			window.location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ac7a175a73392a3&redirect_uri=https://h5.doforest.com/meBring/bring.html?termId='+termId+'&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
+		}else{
+			window.location.href='login.html?termId='+termId;
+		}
+	})
+	
+	function swiper(){
+		var swiper = new Swiper('#swiper-container-id', {
+	    	autoHeight:true,
+	    	loop:true,
+	    	observer: true,
+	    	observeParents: true,
+		    autoplay: {		    
+		      	delay: 2500,
+		      	disableOnInteraction: false,
+		    },
+		    pagination: {
+		    el: '.swiper-pagination',  
+		    },
+	    });
+	    
+	    var swiper = new Swiper('.swiper-container1', {
+	    	autoHeight:true,
+	    	loop:true,
+	    	observer: true,
+	    	observeParents: true,
+		    autoplay: {		    
+		      	delay: 2500,
+		      	disableOnInteraction: false,
+		    },
+		    pagination: {
+		      	el: '.swiper-pagination',
+		    },
+	    });
+	    var swiper = new Swiper('.swiper-container2', {
+	      	slidesPerView: 3,
+	      	spaceBetween: 30,
+	      	observer: true,
+			observeParents: true,
+	      	pagination: {
+	        	el: '.swiper-pagination',
+	      	},
+	    });
+	}
+	
+
+	
+	
+	var _system = {
+		$: function(id) {
+			return document.getElementById(id);
+		},
+		_client: function() {
+			return {
+				w: document.documentElement.scrollWidth,
+				h: document.documentElement.scrollHeight,
+				bw: document.documentElement.clientWidth,
+				bh: document.documentElement.clientHeight
+			};
+		},
+		_scroll: function() {
+			return {
+				x: document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft,
+				y: document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop
+			};
+		},
+		_cover: function(show) {
+			if(show) {
+				this.$("cover").style.display = "block";
+				this.$("cover").style.width = (this._client().bw > this._client().w ? this._client().bw : this._client().w) + "px";
+				this.$("cover").style.height = (this._client().bh > this._client().h ? this._client().bh : this._client().h) + "px";
+			} else {
+				this.$("cover").style.display = "none";
+			}
+		},
+		_guide: function(click) {
+			this._cover(true);
+			this.$("guide").style.display = "block";
+			this.$("guide").style.top = (_system._scroll().y + 5) + "px";
+			window.onresize = function() {
+				_system._cover(true);
+				_system.$("guide").style.top = (_system._scroll().y + 5) + "px";
+			};
+			if(click) {
+				_system.$("cover").onclick = function() {
+					_system._cover();
+					_system.$("guide").style.display = "none";
+					_system.$("cover").onclick = null;
+					window.onresize = null;
+				};
+			}
+		},
+		_zero: function(n) {
+			return n < 0 ? 0 : n;
+		}
+	}
+	
+	$.ajax({
+		type:"get",
+		data:{
+			url:window.location.href
+		},
+		url:url+"/weixin/share",
+		success:function(data){
+			console.log(data)
+			wxState(data);
+		}
+	});
+	
+	function wxState(data){
+		console.log(data)
+		wx.config({    
+		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。    
+		    appId: 'wx5ac7a175a73392a3', // 必填，公众号的唯一标识    
+		    timestamp: data.data.timestamp, // 必填，生成签名的时间戳    
+		    nonceStr: data.data.nonce_str, // 必填，生成签名的随机串    
+		    signature: data.data.sign,// 必填，签名，见附录1   
+		    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage']
+		});  	
+	}
+	wx.ready(function(){
+		wx.onMenuShareTimeline({
+			title: title, // 分享标题
+	    	link: 'https://h5.doforest.com/meBring/dianlinDetail.html?termId='+termId, 
+	    	// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+	    	imgUrl: sharePic, // 分享图标
+		});
+		
+		wx.onMenuShareAppMessage({
+			title: title, // 分享标题
+			desc: '养一片林，收健康水果，享绿色收益，为扶贫助力', // 分享描述
+	   		link: 'https://h5.doforest.com/meBring/dianlinDetail.html?termId='+termId, 
+	    	type: '',
+	    	dataUrl: '',
+	    	// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+			imgUrl: sharePic,// 分享图标	
+			
+		});		
+	});
+	
+</script>

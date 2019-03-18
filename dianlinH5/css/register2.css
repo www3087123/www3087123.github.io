@@ -1,0 +1,78 @@
+body {
+	height: 100%;
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+	background: url(../images/register1.jpg) no-repeat ;
+	background-size: 100%;
+	position: relative;
+	color: #808080;
+	font-size: 0.24rem;
+}
+
+
+.txt{
+	position: absolute;
+	width: 53%;
+	height: 17%;
+	text-align: center;
+	right: 6%;
+	top: 12%;
+	color: #999999;
+	padding: 0.3rem  0;
+	display: flex;
+	align-items: center;
+
+}
+
+
+.txt div{
+	flex: 1;
+}
+
+.bFont{
+	font-size: 0.5rem;
+	font-weight: bolder;
+	color: #7BCE66;
+
+}
+
+.colorF{
+	color: #7BCE66;
+}
+
+p{
+
+	margin-top: 0.2rem;
+}
+
+.submit{
+	position: absolute;
+	width: 70%;
+	height: 0.86rem;
+	background: #FF9720;
+	border-radius: 0.43rem;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 0.26rem;
+	color: #FFFFFF;
+	line-height: 0.86rem;
+	text-align: center;
+	
+}
+
+#content img {
+	display: block;
+	width: 80%;
+	position: absolute;
+	top: 0;
+	bottom: -70%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}

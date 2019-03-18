@@ -1,0 +1,276 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0 none;
+	font-size: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	max-height: 100000px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+	line-height: 1;
+	color: #4D4D4D;
+	background-color: #76C25E;
+	font-size: 0.28rem;
+}
+img{
+	width: 100%;
+	display: block;
+}
+#qrcodeCanvas{
+	width: 3.8rem;
+	height: 3.8rem;
+	display: block;
+	margin: 0 auto;
+	background-color: #03AA5E;
+	text-align: center;
+	line-height: 0.4rem;
+	padding-top: 0.15rem;
+	border-radius:10px;
+}
+#qrcodeCanvas canvas {
+	width: 100%;
+	padding: 0rem 0.15rem;
+}
+#qrcodeCanvas img{
+	width: 92%;
+	margin: 0 auto;
+}
+.main{
+	width: 90%;
+	margin: 0 auto;
+}
+.main_invite{
+	margin: 0.4rem 0;
+	text-align: center;
+	font-size: 0.32rem;
+}
+.main_div{
+	background-size: 100%;
+	
+	background-image: url(../images/t1.png);
+	padding-top: 8%;
+	padding-bottom: 8%;
+}
+.main_center{
+	font-size: 0.34rem;
+	margin:  0 auto;
+	margin-top: -5px;
+	position: relative;
+	background-image: url(../images/h5_icon_middle_pic_05.png);
+}
+
+.num{
+	color: #03AA5E;
+}
+.main_center div:nth-of-type(1){
+	text-align: center;
+	padding-top: 0.2rem;
+	padding-bottom: 0.35rem;
+
+}
+.main_center div:nth-of-type(2){
+	margin-top: 0.6rem;
+}
+.main_div a{
+	width: 3.8rem;
+	height: 0.8rem;
+	display: block;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 0.8rem;
+	font-size: 0.36rem;
+	margin: 0 auto;
+	border-radius:10px;
+	background-color: #03AA5E;
+}
+
+.main_center_1 span{
+	display: block;
+	font-size: 0.3rem;
+	width: 33.3%;
+	height: 1rem;
+	text-align: center;
+	margin-bottom: 0.3rem;
+}
+.text{
+	height: 1rem;
+	overflow: hidden;
+}
+.main_center_1{
+	display: flex;
+	align-items: center;
+	flex-wrap:wrap;
+	z-index: 10000;
+	margin: 0 auto;
+	padding: 0 0.4rem 0.3rem;
+}
+
+
+.xia{
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin:auto;
+	width: 0.24rem;
+	height: 0.2rem;
+}
+.zan{
+	width: 92%;
+	margin:auto;
+	color: #999;
+	font-size: 0.3rem;
+}
+.foot{
+	margin-top: 0.45rem;
+	
+}
+.foot h3{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.foot h3 img{
+	width: 0.26rem;
+	margin: 0 0.15rem;
+}
+
+.foot p{
+	width: 85.2%;
+	margin: 0 auto;
+	line-height: 0.5rem;
+}
+.foot ol{
+	margin-bottom: 0.5rem;
+}
+.foot ol li{
+	width: 77%;
+	margin: 0 auto;
+	line-height: 0.5rem;
+}
+
+#zhezhao{
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	filter: Alpha(opacity=50);
+	opacity: 0.5;
+	display: none;
+}
+h1{
+	margin-left: 0.5rem;
+	margin-top: 0.4rem;
+}
+.alt{
+	width: 95.7%;
+	margin: 0 auto;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+.alt div{
+	background-color: #fff;
+	border-radius: 10px;
+}
+.alt h3{
+	color: #999;
+	padding: 0.5rem 0;
+}
+.alt-top{
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 0.2rem;
+}
+
+.alt a{
+	display: block;
+	width: 25%;
+	text-decoration: none;
+	float: left;
+	color: #4D4D4D;
+}
+.alt span{
+	margin-top: 0.2rem;
+	display: block;
+	margin-bottom: 0.5rem;
+}
+.alt img{
+	width: 0.9rem;
+	margin: 0 auto;
+}
+
+.alt-bottom{
+	height: 1rem;
+	line-height: 1rem;
+	color: #333;
+	margin-bottom: 0.2rem;
+}
+
+.shareType{
+	display: none;
+}

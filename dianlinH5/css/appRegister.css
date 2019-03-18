@@ -1,0 +1,39 @@
+body{
+	height: 100%;
+	width: 100%;
+	background:url(../images/pic_bg.png) no-repeat ;
+	background-size: cover;
+	background-position:center;
+	padding-top: 104%;
+}
+
+.tit{
+	width: 63%;
+	height: 1.1rem;
+	margin: 0 auto;
+	text-align: center;
+	color: #EBFFE2;
+	font-size: 0.28rem;
+	line-height: 0.35rem;
+}
+
+.sub{
+	width: 69%;
+	height: 0.9rem;
+	background: url(../images/icon_buttons.png) no-repeat;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	margin-top: 0.8rem;
+	color: #FEFEFE;
+	font-size: 0.34rem;
+	line-height: 0.9rem;
+	text-align: center;
+	border-radius: 0.45rem;
+}
+
+.h1{
+	text-align: center;
+	margin-top: 0.2rem;
+	font-size: 0.3rem;
+	color: #365C24;
+}

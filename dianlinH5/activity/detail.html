@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>活动详情</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="../css/public.css" />
+		<link rel="stylesheet" href="../css/activityDetail.css" />
+	</head>
+	<style>
+		.navto .service {
+			width: 1rem;
+			border-top: 1px solid #E6E6E6;
+			text-decoration: none;
+			color: #4D4D4D;
+		}
+		
+		.service img{
+			margin: 0 auto;
+			margin-top: 0.2rem;
+		}
+		
+		.service div{
+			width: 100%;
+			line-height: 0.3rem;
+			display: block;
+			text-align: center;
+			font-size: 0.24rem;
+			margin-top: 0.1rem;
+		}
+		.navto .buy {
+			flex: 1;
+		}
+		
+		.buy span {
+			font-size: 0.26rem;
+		}
+		
+		#banner {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		
+		#cover {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 18888;
+			background-color: #000000;
+			opacity: 0.7;
+		}
+		
+		#guide {
+			display: none;
+			position: absolute;
+			right: 18px;
+			top: 5px;
+			z-index: 19999;
+		}
+		
+		#guide img {
+			width: 260px;
+			height: 180px;
+		}
+	</style>
+
+	<body style="padding-bottom: 0.1rem;">
+		<img id="banner" class="surface" src="image/pic_banner.png" />
+		<div class="title nickName">樱桃园采摘季，免费名额等你拿。点林邀请您来杭州良渚文化村玩…</div>
+		<div class="titList"><img src="../images/ad2.png"><span class="activityTime">2018年4月29日-5月6日</span></div>
+		<div class="titList"><img src="../images/ad3.png"><span class="address">杭州良渚文化村</span></div>
+		<div id="content" style="margin-bottom: 1.2rem;padding:0;margin-top: 0.2rem;">
+			<img src="image/pic_main.jpg" style="margin: 0;" />
+		</div>
+		<div class="navto">
+			<a class="service" onclick="yaoqing()"><img src="image/yaoqing.png" /><div>邀请</div></a>
+			<a class="service share" onclick="_system._guide(true)"><img src="image/icon_share.png" /><div>分享</div></a>
+			<!--<div class="buy" onclick="buy()"><img src="image/icon_main_apply.png" />88元报名-->
+			<div class="buy" ><img src="image/icon_main_apply.png" />活动已结束
+				<span>(每邀请一人返18元)</span>
+			</div>
+		</div>
+		<div id="cover"></div>
+		<div id="guide"><img src="image/guide1.png"></div>
+	</body>
+
+</html>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script>
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	var code = getQueryString("code");
+	var inviteId = getQueryString("inviteId");
+	var authorization = $.cookie('authorization');
+	var orderId = '';
+	var price = '';
+	var myOpenId = '';
+	openid()
+	function openid() {
+		$.ajax({
+			type: "get",
+			url: url + "/orderController/getOpenId?code=" + code,
+			success: function(data) {
+				console.log(data)
+				if(data.data == "") {
+					openid()
+				} else {
+					myOpenId = data.data;
+					$.cookie('myOpenId', myOpenId, {
+						expires: 7,
+						path: '/'
+					});
+				}
+			}
+		});
+	}
+	
+	function yaoqing(){
+		if(authorization == undefined) {
+			window.location.href = 'register.html?myOpenId=' + myOpenId+'&inviteId='+inviteId
+		}else{
+			window.location.href = 'invite.html?myOpenId=' + myOpenId+'&inviteId='+inviteId;
+		}
+	}
+	
+	function buy() {
+		if(authorization == undefined) {
+			window.location.href = 'register.html?myOpenId=' + myOpenId+'&inviteId='+inviteId
+		} else {
+			$.ajax({
+				type: "post",
+				url: url + "/orderController/creatOrder.json",
+				data: {
+					isCoin: 0,
+					inviteCode: inviteId,
+					type: 1,
+					typeId: 2,
+					count: 1
+				},
+				async: false,
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader("Authorization", authorization);
+				},
+				success: function(data) {
+					console.log(data)
+					orderId = data.data.orderId;
+					price = data.data.price;
+					payFor()
+				},
+				error: function(data) {
+					if((data.status && data.status == '401') || (data.statusText && data.statusText == 'No Transport')) {
+						window.location.href = 'register.html?myOpenId=' + myOpenId+'&inviteId='+inviteId
+						return;
+					}
+				}
+			});
+		}
+	};		
+
+
+	var timeStamp = '';
+	var nonceStr = '';
+	var package = '';
+	var signType = '';
+	var paySign = '';
+
+	function payFor() {
+		$.ajax({
+			type: "post",
+			url: url + "/orderController/creatShowOrder",
+			async: false,
+			data: {
+				orderId: orderId,
+				type: 1,
+				payWay: 4,
+				wxType: 1,
+				openid: myOpenId
+			},
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader("Authorization", authorization);
+			},
+			success: function(data) {
+				console.log(data)
+				if(data.msg) {
+					timeStamp = data.data.timeStamp;
+					nonceStr = data.data.nonceStr;
+					package = data.data.package;
+					signType = data.data.signType;
+					paySign = data.data.paySign;
+//					if(typeof WeixinJSBridge == "undefined") {						
+//						if(document.addEventListener) {
+//							document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+//						} else if(document.attachEvent) {
+//							document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+//							document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+//						}
+//					} else {
+						onBridgeReady();
+//					}
+
+				}
+			}
+		});
+	}
+
+	function onBridgeReady() {
+
+		WeixinJSBridge.invoke(
+			'getBrandWCPayRequest', {
+				"appId": "wx5ac7a175a73392a3", //公众号名称，由商户传入     
+				"timeStamp": timeStamp, //时间戳，自1970年以来的秒数     
+				"nonceStr": nonceStr, //随机串     
+				"package": package,
+				"signType": signType, //微信签名方式：    
+				"paySign": paySign //微信签名 
+			},
+			function(res) {
+				if(res.err_msg == "get_brand_wcpay_request:ok") { // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+					window.location.href = 'success.html?myOpenId='+myOpenId
+				} else {
+					alert('支付失败，请重试')
+				}
+
+			}
+		);
+	}
+
+	var _system = {
+		$: function(id) {
+			return document.getElementById(id);
+		},
+		_client: function() {
+			return {
+				w: document.documentElement.scrollWidth,
+				h: document.documentElement.scrollHeight,
+				bw: document.documentElement.clientWidth,
+				bh: document.documentElement.clientHeight
+			};
+		},
+		_scroll: function() {
+			return {
+				x: document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft,
+				y: document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop
+			};
+		},
+		_cover: function(show) {
+			if(show) {
+				this.$("cover").style.display = "block";
+				this.$("cover").style.width = (this._client().bw > this._client().w ? this._client().bw : this._client().w) + "px";
+				this.$("cover").style.height = (this._client().bh > this._client().h ? this._client().bh : this._client().h) + "px";
+			} else {
+				this.$("cover").style.display = "none";
+			}
+		},
+		_guide: function(click) {
+			this._cover(true);
+			this.$("guide").style.display = "block";
+			this.$("guide").style.top = (_system._scroll().y + 5) + "px";
+			window.onresize = function() {
+				_system._cover(true);
+				_system.$("guide").style.top = (_system._scroll().y + 5) + "px";
+			};
+			if(click) {
+				_system.$("cover").onclick = function() {
+					_system._cover();
+					_system.$("guide").style.display = "none";
+					_system.$("cover").onclick = null;
+					window.onresize = null;
+				};
+			}
+		},
+		_zero: function(n) {
+			return n < 0 ? 0 : n;
+		}
+	}
+	
+
+	$.ajax({
+		type:"get",
+		data:{
+			url:window.location.href
+		},
+		url:url+"/weixin/share",
+		success:function(data){
+			console.log(data)
+			wxState(data)
+		}
+	});
+	
+	function wxState(data){
+		console.log(data)
+		wx.config({    
+		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。    
+		    appId: 'wx5ac7a175a73392a3', // 必填，公众号的唯一标识    
+		    timestamp: data.data.timestamp, // 必填，生成签名的时间戳    
+		    nonceStr: data.data.nonce_str, // 必填，生成签名的随机串    
+		    signature: data.data.sign,// 必填，签名，见附录1   
+		    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage']
+		});  	
+	}
+	wx.ready(function(){
+		wx.onMenuShareTimeline({
+			title: '樱桃园采摘季，免费名额等你来拿', // 分享标题
+	    	link: 'https://h5.doforest.com/activity/load.html?inviteId='+myOpenId, 
+	    	// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+	    	imgUrl: 'https://images.doforest.com//img-20180429003659904-SLA8KLIW' // 分享图标
+		});
+		
+		wx.onMenuShareAppMessage({
+			title: '樱桃园采摘季，免费名额等你来拿', // 分享标题
+			desc: '每成功邀请一位立减18元!', // 分享描述
+	   		link: 'https://h5.doforest.com/activity/load.html?inviteId='+myOpenId, 
+	    	type: '',
+	    	dataUrl: '',
+	    	// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+			imgUrl: 'https://images.doforest.com//img-20180429003659904-SLA8KLIW',// 分享图标	
+			success: function () {
+			
+				// 用户确认分享后执行的回调函数
+			},
+			cancel: function () {
+		
+				// 用户取消分享后执行的回调函数
+			},
+			fail: function () {
+			
+				// 用户取消分享后执行的回调函数
+			}
+		});		
+	});
+</script>

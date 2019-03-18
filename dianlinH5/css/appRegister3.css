@@ -1,0 +1,35 @@
+body{
+	height: 100%;
+	width: 100%;
+	background:url(../images/pic_bg2.png) no-repeat ;
+	background-size: cover;
+	background-position:center;
+	padding-top: 95%;
+}
+
+p{
+	text-align: center;
+	font-size: 0.4rem;
+	color: #03AA5E;
+	font-weight: bolder;
+	margin-top: 0.3rem;
+}
+
+p span{
+	color: #FF9900;
+	
+}
+
+.sub {
+	width: 70%;
+	height: 0.9rem;
+	background: url(../images/icon_buttons.png) no-repeat;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	margin-top: 0.9rem;
+	color: #FEFEFE;
+	font-size: 0.34rem;
+	line-height: 0.9rem;
+	text-align: center;
+	border-radius: 0.45rem;
+}

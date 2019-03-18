@@ -1,0 +1,98 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0 none;
+	font-size: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	max-height: 100000px;
+}
+
+* {
+	box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+	line-height: 1;
+	color: #666666;
+	background-color: #FFFFFF;
+	font-size: 0.28rem;
+}
+#content{
+	width: 94%;
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-top: 0.4rem;
+	padding-bottom: 0.4rem;
+}
+h6{
+	text-align: left;
+	margin-top: 0.45rem;
+	color: #333333;
+	line-height: 0.7rem;
+	font-weight: bold;
+}
+
+p{
+	line-height: 0.5rem;
+}

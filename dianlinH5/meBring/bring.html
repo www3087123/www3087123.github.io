@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>认养树</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" type="text/css" href="css/bring.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	</head>
+	<body>
+		<div class="top">
+			<div>认养单价(元/棵)	<span>￥<a class="price"></a></span></div>
+			<div>
+				认养棵量(棵) 
+				<span class="input"> 
+					<button id="Jian" type="button" onclick="JianJian()">-</button>
+					<input id="Add" type="number"  value="1" onkeyup="this.value=this.value.replace(/\D/g,'')"  onchange="input(this)">
+					 <button id="Jia" type="button" onclick="JiaJia()">+</button>
+				</span>
+			</div>
+			<div class="tab tab1">小计 <span>￥<a class="xiaoji"></a></span></div>
+		</div>
+		
+		
+		<footer>支付(￥<a class="priceL"></a>)</footer>
+		
+		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="../js/layer.js"></script>
+		<link rel="stylesheet" type="text/css" href="../js/skin/layer.css"/>
+		<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/url.js"></script>
+		
+		<script type="text/javascript">
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+			var userId=$.cookie('userId');
+			var authorization = $.cookie('authorization');
+			var code = getQueryString('code');
+			var termId = getQueryString('termId');
+			var price ='';
+
+			if(authorization!=null&&authorization!=undefined&&authorization!=''){
+				var login=true
+			}else{
+				var login = false
+			};
+			var Jian = document.getElementById("Jian");
+			var Jia  = document.getElementById("Jia");
+			var Add  = document.getElementById("Add");
+			
+			// ++ , --
+			function JiaJia() {
+				Add.value++;
+			    $('.tab1 span').html('￥'+$('#Add').val() * $('.price').html());
+			    $('.priceL').html($('#Add').val() * $('.price').html());
+			};
+			
+			function JianJian() {
+			    if (Add.value <= 1) {
+			    } else {
+			        Add.value--;
+			    $('.tab1 span').html('￥'+$('#Add').val() *$('.price').html());
+			    $('.priceL').html($('#Add').val() *$('.price').html());
+			    }
+			};
+			
+			function input(obj){
+			    $('.tab1 span').html('￥'+obj.value *$('.price').html());
+				$('.priceL').html(obj.value *$('.price').html());
+			}
+			
+			var myOpenId = '';
+			openid();
+			function openid() {
+				$.ajax({
+					type: "get",
+					url: url + "/orderController/getOpenId?code=" + code,
+					async: false,
+					success: function(data) {
+						console.log(data)
+						if(data.data == "") {
+							openid()
+						} else {
+							myOpenId = data.data;
+						}
+					}
+				});
+			}
+		
+		$.ajax({
+			type: "post",
+			url: url + "/forest/term/get",
+			data: {
+				forestTermId: termId
+			},		
+			success: function(data) {
+				$('.price,.xiaoji,.priceL').html(data.data.price);
+			}
+		});
+		
+		$('footer').click(function(){
+			if($('#Add').val()==0){
+				layer.msg('请填写正确购买数量')
+			}else{
+				$.ajax({
+					type:"get",
+					url:url+"/orderController/creatOrder",
+					data:{
+						isCoin:0,
+						type:3,
+						count:$("#Add").val(),
+						typeId:termId
+					},
+					beforeSend: function(xhr) {
+						xhr.setRequestHeader("Authorization", authorization);
+					},
+					success:function(data){
+						console.log(data)
+						if(data.result){
+							succ(data.data.orderId)
+						}
+					},
+					error: function(data) {
+						if((data.status && data.status == '401') || (data.statusText && data.statusText == 'No Transport')) {
+							layer.msg('登录失效，请重新登录');
+							setTimeout(function() {
+								window.location.href='login.html?termId='+termId;
+							}, 2000)
+							return;
+						}
+					},
+				});
+			}
+		})
+		var timeStamp = '';
+		var nonceStr = '';
+		var package = '';
+		var signType = '';
+		var paySign = '';	
+		function succ(orderId){
+			$.ajax({
+				type:"get",
+				url:url+"orderController/creatShowOrder",
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader("Authorization", authorization);
+				},
+				data:{
+					orderId:orderId,
+					type:3,
+					payWay:4,
+					wxType:1,
+					openid:myOpenId
+				},
+				success:function(data){
+					console.log(data)
+					if(data.msg) {
+						timeStamp = data.data.timeStamp;
+						nonceStr = data.data.nonceStr;
+						package = data.data.package;
+						signType = data.data.signType;
+						paySign = data.data.paySign;
+						onBridgeReady();
+					}
+				},
+				error: function(data) {
+					if((data.status && data.status == '401') || (data.statusText && data.statusText == 'No Transport')) {
+						layer.msg('登录失效，请重新登录');
+						setTimeout(function() {
+							window.location.href='login.html?termId='+termId;
+						}, 2000)
+						return;
+					}
+				},
+			});
+		}
+			
+		function onBridgeReady() {
+			WeixinJSBridge.invoke(
+				'getBrandWCPayRequest', {
+					"appId": "wx5ac7a175a73392a3", //公众号名称，由商户传入     
+					"timeStamp": timeStamp, //时间戳，自1970年以来的秒数     
+					"nonceStr": nonceStr, //随机串     
+					"package": package,
+					"signType": signType, //微信签名方式：    
+					"paySign": paySign //微信签名 
+				},
+				function(res) {
+					console.log(res)
+					if(res.err_msg == "get_brand_wcpay_request:ok") { // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+						window.location.href = 'bringSuc.html?termId='+termId+'&userId='+userId;
+					} else {
+						alert('支付失败，请重试')
+					}
+	
+				}
+			);
+		}
+		
+		
+		
+		</script>
+	</body>
+	
+</html>

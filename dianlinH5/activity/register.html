@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<meta charset="UTF-8">
+		<title>我的登录</title>
+		<link rel="stylesheet" href="../css/public.css" />
+		<link rel="stylesheet" href="../css/appRegister2.css" />
+	</head>
+	<style>
+		body{
+			background: url(image/pic_login.png) no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+		.form{
+			margin-top: 94%;
+		}
+	</style>
+	<body>
+		<!--<img src="image/pic_login.png" id="banner" />-->
+		<div class="form">
+			<div class="inputBox">
+				<input type="number" placeholder="请输入手机号" class="phone" />
+			</div>
+			<div class="inputBox">
+				<input type="text" placeholder="请输入验证码" class="code test" />
+				<div class="codes">获取验证码</div>
+				<div class="cover"></div>
+			</div>
+		</div>
+		
+		<div class="sub" onclick="register()">登录</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/lib/base64.js"></script>
+<script type="text/javascript" src="../js/layer.js"></script>
+<link rel="stylesheet" href="../js/skin/layer.css" />
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript" src="../js/lib/hashes.js"></script>
+<script>
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	var userId=getQueryString('userId');
+	var clock = '';
+	var nums = "30";
+	function sendCode() {
+		$('.cover').html(nums + 's');
+		$('.cover').show();
+		
+		clock = setInterval(doLoop, 1000); //一秒执行一次
+	}
+
+	function doLoop() {
+		nums--;
+		if(nums > 0) {
+			$('.cover').html(nums + "s")
+		} else {
+			clearInterval(clock); //清除js定时器			
+			nums = 30; //重置时间
+			$('.cover').hide();
+			$('.cover').html(nums + 's');
+		}
+	}
+
+	$('.codes').click(function() {
+		var before = $(".phone").val(); //手机号		
+		var myreg = /^1\d{10}$/; //手机号验证	
+		if(before == '') {
+			layer.msg('手机号码不能为空！');
+		} else if(!myreg.test($(".phone").val())) {
+			layer.msg('请输入有效的手机号码！');
+		} else {
+			var MD5 = new Hashes.MD5;
+			var mdF = MD5.hex("doforest" + before).toUpperCase();
+			var SHA256 = new Hashes.SHA256;
+			var SHA256s = SHA256.hex(mdF);
+			sendCode(); //倒计时
+			$.ajax({
+				type: "post",
+				url: url + "/ucenter/user/sms.json",
+				data: {
+					'phone': $(".phone").val(),
+					'templateCode': '1',
+					'key': SHA256s
+				},
+				dataType: "json",
+				success: function(data) {
+					console.log(data)
+				},
+				error: function(data) {
+					layer.msg('网络错误！', {
+						time: 2000
+					});
+				}
+			})
+
+		}
+	})
+
+	function register() {
+		var myreg = /^1\d{10}$/; //手机号验证	
+		var after2 = $(".test").val(); //验证码
+		var before = $(".phone").val(); //手机号
+		if(before == '') {
+			layer.msg('手机号码不能为空！');
+		} else if(!myreg.test($(".phone").val())) {
+			layer.msg('请输入有效的手机号码！');
+		} else {
+			CheckPassWord()
+		}
+	}
+
+	function CheckPassWord() {
+		if($(".test").val() == '') {
+			layer.msg('验证码不能为空！');
+		} else {
+			$.ajax({
+				type: "post",
+				url: url + "/regNew.json",
+				data: {
+					phone: $(".phone").val(),
+					code: $(".test").val(),
+					inviteType:1
+				},
+				dataType: "json",
+				success: function(data) {
+					if(data.result == true) {
+						layer.msg(data.msg);
+						console.log(data)
+						$.cookie('authorization', data.data.user.app_token, {
+							expires: 7,
+							path: '/'
+						});
+						setInterval(function() {
+							window.location.href ='../active/forward.html?userId='+userId;		
+						}, 1000)
+					} else if(data.result == false) {
+						layer.msg(data.msg);
+					}
+				},
+				error: function(data) {
+					layer.msg('网络错误！');
+				}
+			})
+		}
+	}
+
+
+</script>

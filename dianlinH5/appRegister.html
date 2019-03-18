@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>		
+		<title>邀请好友注册</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/appRegister.css" />
+	</head>
+	<body>
+		<div class="tit">
+			<p>Hi，我是小小林，我在玩[点林]，<p/>
+			<p>这里可以购买属于自己的果树，</p>
+			<p>还有水果免费领取哦！</p>
+		</div>
+		<div class="sub">立即加入，免费拿50林钱</div>
+		<p class="h1">活动说明</p>
+		<p class="h1">邀请好友即可获得50林钱，林钱可以抵扣现金</p>
+	</body>
+</html>
+<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js" ></script>
+<script>
+	$('.sub').click(function(){
+		window.location.href='appRegister2.html'
+	})
+</script>

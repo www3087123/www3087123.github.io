@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>活动详情</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="../css/public.css" />
+		<link rel="stylesheet" href="../css/activityDetail.css" />
+	</head>
+
+	<body style="display: none;padding-bottom: 1.2rem;">
+		<img id="banner" class="surface" />
+		<div class="main bg bd">
+			<div class="main-top bd">
+				<div class="main_top_1">
+					<div class="main-top1"></div>
+					<span class="nickName"></span>
+				</div>
+				<div class="main_top_2">
+					<span class="presentPrice"></span>
+					<s class="originalPrice"></s>
+				</div>
+			</div>
+			<div class="main_bottom_1 bd">
+				<img src="../images/ad2.png" alt="">
+				<div class="activityTime"></div>
+			</div>
+			<div class="main_bottom_1 bd">
+				<img src="../images/ad3.png" alt="">
+				<div class="address">浙江省临安市</div>
+			</div>
+			<a class="main_bottom_2">
+				<img src="../images/ad5.png" alt="">
+				<div class="main-bottom_2_left"> 关联资产树 </div>
+				<div class="main-bottom_2_right termName"> 临安樱桃树 </div> 
+				<img src="../images/icon_right.png" alt=""> 
+			</a>
+		</div>
+		<div class="main_center bg clear">
+			<div class="main_top_left" style="text-align: left; padding-left: 0.3rem;"> 
+				<span id="left" class="xian" style="border: none;">活动信息</span> 
+			</div>
+			<!--<div class="main_top_right"> 
+				<span id="right">费用说明</span> 
+			</div>-->
+		</div>
+		<div class="center_m bg">
+			<div id="content" class="tab1"></div>
+			<!--<div id="content" class="center_m11 tab2"></div>-->
+		<div class="navto">
+			<div class="service"><img src="../images/mine_icon_serive@2x.png" />客服</div>
+			<div class="buy"><img src="../images/forest_icon_buy@2x.png" />立即报名</div>
+			<div class="buys"><img src="../images/forest_icon_buy@2x.png" />报名结束</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="../js/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script>
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	var activityId = getQueryString("activityId");
+	var loginState = getQueryString("loginState");
+	$.ajax({
+		type: "post",
+		url: url + "/forest/activity/get",
+		data: {
+			forestActivityId: activityId
+		},
+		success: function(data) {
+			console.log(data)
+			//			type=0考察 type=1旅游		
+			$('.nickName').html(data.data.nickName);
+			$('.surface').attr("src", data.data.surface);
+			$('.activityTime').html(data.data.activityTime);
+			$('.address').html(data.data.address);
+			$('.tab1').html(data.data.content);
+			$('.tab2').html(data.data.content);
+			$('.presentPrice').html('￥' + data.data.presentPrice); //现价
+			if(data.data.type == 0) {
+				$('.main-top1').html('考察');
+			} else if(data.data.type == 1) {
+				$('.main-top1').html('旅游');
+				$('.originalPrice').show();
+				$('.originalPrice').html('￥' + data.data.originalPrice); //原价
+			};
+			if(data.data.state ==1) {
+				$('.buys').hide();
+			} else {
+				$('.buy').hide();
+			}
+			$('body').show();
+		}
+	});
+	
+//	var f = document.querySelectorAll(".main_center span");
+//	var b = document.querySelectorAll(".center_m div");
+//	for(var j = 0; j < f.length; j++) {
+//		f[j].onclick = function() {
+//			for(var m = 0; m < f.length; m++) {
+//				if(f[m] == this) {
+//					b[m].style.display = "block"
+//					f[m].style.borderBottom = "4px solid #03AA5E"
+//					f[m].style.color = "#03AA5E"
+//				} else {
+//					b[m].style.display = "none"
+//
+//					f[m].style.borderBottom = "4px solid #fff";
+//					f[m].style.color = "#333";
+//				}
+//			}
+//		}
+//	}
+	$('.buy').click(function() {
+		if(loginState == '1') {
+			wx.miniProgram.navigateTo({
+				url: '../bindingPhone/bindingPhone'
+			})
+		} else if(loginState == '0') {
+			wx.miniProgram.navigateTo({
+				url: '../activityOrder/activityOrder?activityId=' + activityId
+			})
+		}
+	})
+</script>

@@ -1,0 +1,208 @@
+body {
+	padding-bottom: 0.2rem;
+	width: 100%;
+}
+
+.title {
+	display: block;
+	background: #fff;
+	width: 100%;
+	padding: 0.3rem;
+	font-size: 0.32rem;
+	line-height: 0.45rem;
+}
+
+.price {
+	font-weight: bolder;
+}
+
+.titO {
+	font-size: 0.24rem;
+	color: #FF6600;
+	margin-top: 0.1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.titO div {
+	color: #999999;
+	font-size: 0.28rem;
+}
+
+.titT {
+	font-size: 0.24rem;
+	color: #666;
+	margin-top: 0.1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.title p span {
+	font-size: 0.34rem;
+}
+
+.all {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.26rem;
+	color: #666;
+	font-weight: normal;
+	margin-top: 0.1rem;
+}
+
+.more {
+	display: block;
+	width: 100%;
+	height: 0.08rem;
+	border-radius: 0.04rem;
+	background: #E6E6E6;
+	margin-top: 0.2rem;
+	margin-bottom: 0.5rem;
+}
+
+.have {
+	height: 0.08rem;
+	background: #03AA5E;
+	border-radius: 0.04rem 0 0 0.04rem;
+	position: relative;
+}
+
+.percent {
+	width: 0.56rem;
+	height: 0.4rem;
+	background: url(../images/mine_icon_slider@2x.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0.1rem;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 0.24rem;
+	line-height: 0.5rem;
+}
+
+#content {
+	background: #FFFFFF;
+	margin-top: 0.2rem;
+	padding: 0.3rem;
+}
+
+#content img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.recommends {
+	display: flex;
+	background: #FFFFFF;
+	padding: 0.3rem;
+	margin-top: 0.2rem;
+	box-shadow: 1px 0px 0px rgba(230, 230, 230, 1);
+	font-size: 0.32rem;
+	color: #4D4D4D;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	justify-content: space-between;
+}
+.recommends div{
+	display: flex;
+	align-items: center;
+}
+
+.leftImg{
+	display: block;
+	height: 0.2rem;
+	width: 0.2rem;
+	margin-right: 0.09rem;
+}
+
+.recommends span{
+	font-size: 0.32rem;
+	color: #4D4D4D;
+}
+
+.recommends .right {
+	font-size: 0.28rem;
+	color: #999999;
+	margin-right: 0.1rem;
+}
+
+.navto {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	height: 0.98rem;
+	font-size: 0.34rem;
+	color: #4D4D4D;
+	background: #03aa5e;
+}
+.navto a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	text-align: center;
+	line-height: 0.98rem;
+}
+
+.navto div {
+
+	display: flex;
+	height: 0.98REM;
+	justify-content: center;
+	align-items: center;
+}
+
+.service {
+	background: #FFFFFF;
+	width: 30%;
+}
+
+.buy {
+	background: #03AA5E;
+	color: #FFFFFF;
+	flex: 1;
+}
+
+.navto img {
+	margin-right: 0.1rem;
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+}
+
+.fruit{
+	display: block;
+	width: 0.3rem;
+	height: 0.3rem;
+	margin-right: 0.1rem;
+}
+
+.coin{
+	font-size: 0.36rem;
+	color: #FF6600;
+	font-weight: bolder;
+}
+
+.deliveryTime{
+	display: none;
+}
+
+
+.titOT{
+	display: flex;
+	align-items: center;
+}
+
+.titOT img{
+	display: block;
+	height: 0.3rem;
+	width: 0.3rem;
+	margin-right: 0.1rem;
+}
+.titOT span{
+	color: #FF6600;
+	font-size: 0.36rem;
+}

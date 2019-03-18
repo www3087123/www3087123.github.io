@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>收礼物</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/giftIndex.css" />
+	</head>
+	<body>
+		<div id="content">
+			<div class="divBoxOne"><span class="creatTime"></span>，您的朋友<span class="userName"></span>来到了点林</div>
+			<div class="divBoxTwo"><span class="buyTime"></span>，ta买了第一棵树</div>
+			<div class="divBoxThree">今天ta的树结果子啦~</div>
+			<div class="divBoxFour">给你送了<span class="name"></span>，快来领取吧！</div>
+			<div class="submit">点击领取</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js" ></script>
+<script>
+	function getUrlParam(key) {
+	    var url = window.location.search;
+	    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+	    var result = url.substr(1).match(reg);
+	    return result ? decodeURIComponent(result[2]) : null;
+	}
+	var creatTime = getUrlParam("creatTime").substring(0,11); 
+	var buyTime = getUrlParam("buyTime").substring(0,11); 
+	var name= getUrlParam("name"); 
+	var random= getUrlParam("random"); 
+	var userName= getUrlParam("userName"); 
+	$('.name').html(name);
+	$('.creatTime').html(creatTime);
+	$('.buyTime').html(buyTime);
+	$('.userName').html(userName);
+	$('.submit').click(function(){
+		window.location.href='gift.html?random='+random
+	})
+</script>
+

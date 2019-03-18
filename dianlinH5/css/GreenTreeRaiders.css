@@ -1,0 +1,75 @@
+body {
+    background: #FFFFFF;
+}
+
+.left {
+    float: left;
+}
+
+.strategy {
+    padding: 0.4rem 0.3rem;
+    padding-right: 0;
+    display: flex;
+    font-size: 0.32rem;
+    color: #4d4d4d;
+    align-items: center;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.strategy:first-child {
+    margin-top: 0.5rem;
+}
+
+.strategy img {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.2rem;
+}
+
+.strategy div {
+   
+}
+
+.strategy-center {
+    flex: 1;
+}
+
+.s-center1 {   
+    height: 0.32rem;
+    font-size: 0.32rem;
+    font-family: PingFang-SC-Medium;
+    color: rgba(51, 51, 51, 1);
+}
+
+.s-center2 {
+    margin-top: 0.15rem;
+    font-size: 0.24rem;
+    font-family: PingFang-SC-Medium;
+    color: rgba(128, 128, 128, 1);
+}
+
+.strategy-right {
+    background: rgba(239, 246, 252, 1);
+    border-top-left-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem;
+    width: 1.27rem;
+    height: 0.7rem;
+   	margin-left: 0.3rem;
+    font-size: 0.3rem;
+    color: #03AA5E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:PingFang-SC-Bold;
+    font-weight: bold;
+}
+.s-right img{
+    width: 0.24rem;
+    text-align: center;
+    height: 0.32rem;
+    margin-right: 0.1rem;
+}
+
+.s-right{
+	display: flex;
+}

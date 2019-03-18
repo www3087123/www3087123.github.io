@@ -1,0 +1,115 @@
+body {
+	width: 100%;
+	height: 100%;
+	background: #F2F2F2;
+	color: #4D4D4D;
+}
+
+#top{
+	width: 100%;
+	height: 2.92rem;
+	background: #FFFFFF;
+	position: relative;
+	padding-top: 0.6rem;
+}
+
+.abs{
+	position: absolute;
+	left: 0;
+	top:0.3rem;
+	width: 1.64rem;
+	height: 0.6rem;
+	background: #F2F2F2;
+	border-radius: 0 0.3rem  0.3rem 0;
+	line-height: 0.6rem;
+	text-align: center;
+	font-size: 0.28rem;
+
+}
+
+#top img{
+	display: block;
+	width: 1.43rem;
+	margin: 0 auto;
+}
+
+#top p{
+	text-align: center;
+	margin-top: 0.2rem;
+}
+
+#center{
+	background: #FFFFFF;
+}
+
+#center{
+	margin-top: 0.2rem;
+	padding: 0.4rem 0.3rem;
+}
+
+ h1{
+	font-size: 0.32rem;
+	margin-bottom: 0.4rem;
+}
+
+.medal{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+
+.medals .lv{
+	display: block;
+	width: 0.86rem;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.medals p{
+	margin-top: 0.2rem;
+	font-size: 0.28rem;
+	text-align: center;
+}
+
+.border{
+	display: block;
+	height: 0.07rem;
+}
+
+.txt{
+	margin: 0.4rem 0;
+	padding: 0.4rem 0;
+	border-bottom: 1px solid #E6E6E6;;
+	border-top: 1px solid #E6E6E6;;
+}
+
+.txt p{
+	color: #666666;
+	font-size: 0.28rem;
+	margin-top: 0.1rem;
+}
+
+.tr{
+	display: flex;
+	text-align: center;
+	padding: 0.21rem 0;
+	border: 1px solid #E6E6E6;
+	border-bottom: 0;
+}
+
+.tr div:first-child{
+	width: 37%;
+}
+
+.tr div:last-child{
+	flex: 1;
+}
+
+.head{
+	background: #F2F2F2;
+}
+
+.bottom{
+	border-bottom:1px solid #E6E6E6;
+}

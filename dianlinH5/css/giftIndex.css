@@ -1,0 +1,71 @@
+body {
+	width: 100%;
+	height: 100%;
+	background: #B3D152;
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+	background: url(../images/gift.png) no-repeat;
+	background-size: 100%;
+	position: relative;
+	color: #4D4D4D;
+	text-align: center;
+}
+
+#content div {
+	font-size: 0.28rem;
+	
+}
+
+.divBoxOne {
+	position: absolute;
+	width: 30%;
+	height: 7%;
+	left: 19%;
+	top: 8%;
+}
+
+.divBoxTwo {
+	position: absolute;
+	width: 27%;
+	height: 8%;
+	right: 3%;
+	top: 19.5%;
+}
+
+.divBoxThree {
+	position: absolute;
+	width: 24%;
+	height: 8%;
+	left: 3%;
+	top: 34%;
+}
+
+.divBoxFour {
+	position: absolute;
+	width: 28%;
+	height: 8%;
+	right: 27%;
+	top: 63%;
+}
+
+#content .submit {
+	display: block;
+	font-size: 0.36rem;
+	position: absolute;
+	color: #FFFFFF;
+	width: 3.2rem;
+	height: 0.88rem;
+	background: url(../images/gift_button.png) no-repeat;
+	background-size: 100% 100%;
+	border-radius: 5px;
+	top: 0;
+	bottom: -83%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	line-height: 0.8rem;
+}

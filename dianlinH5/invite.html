@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>邀请好友</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/invite1.css" />
+	</head>
+	<body>
+	
+		<img src="images/banner2.png"/>
+		<div class="main">
+			<div class="main_div">
+				<div id="qrcodeCanvas" ></div>
+				<div class="main_invite">您的邀请码：<span class="code"></span></div>
+				<a class="invite" onclick="showdiv()">立即邀请</a>
+			</div>
+			<img src="images/h5_icon_middle_pic_06.png" style="width:100%;margin-top: -1px;"/>
+			<img src="images/t2.png" style="width:100%;margin-top: -16px;"/>
+			<div class="main_center">
+				<div style="border-bottom:1px solid #E6E6E6 ;">您已成功邀请<span class="num"></span>个好友</div>
+				<div class="main_center_1"></div>
+				<a href="javascript:;" class="xia"><img src="images/h5_icon_arrow_d.png" /></a>
+			</div>
+		<img src="images/h5_icon_middle_pic_06.png" style="width:100%;margin-top: -3px;"/>
+		
+		</div>
+
+		<div class="foot">
+			<h3><img src="images/icon_grass.png" alt="" />活动说明<img src="images/icon_grass.png" alt="" /></h3>
+			<h1>活动说明</h1>
+			<p style="margin-top: 0.29rem;margin-bottom: 0.3rem;">一、邀请及奖励规则</p>
+			<ol>
+				<li>每一位点林用户都可以通过邀请链接、邀请码等途径邀请好友注册点林账号；</li>
+				<li>每成功邀请一位新用户注册，邀请人可获得200林点，同时被邀请人也可以获得200林点；</li>
+				<li>若同一用户被多人邀请，则按照该用户点击的邀请链接或填写的邀请码为准。</li>
+			</ol>
+			<p>二、林点使用规则</p>
+			<ol>
+				<li>林点仅限在点林平台内使用；</li>
+				<li>林点可用于兑换点林平台果树、农产品等；</li>
+				<li>林点不可提现，不可转让；</li>
+				<li>林点使用的最终解释权归点林平台所有。</li>
+			</ol>
+			<p>三、其他说明</p>
+			<ol>
+				<li>点林如因市场、运营等实际情况，需要对本活动规则作变更时，将通过官方app予以公告通知。</li>
+			</ol>
+		</div>
+	
+		<div id="zhezhao"></div>
+		<div class="alt" style="display: none;"	>
+			<div class="alt-top">
+				<h3>———邀请好友———</h3>
+				<a class="ho_in" >
+					<img src="images/h5_icon_circle.png" alt="" />
+					<span>朋友圈</span>
+					<div class="shareType">2</div>
+				</a>
+				<a class="ho_in" >
+					<img src="images/h5_icon_weixin.png" alt="" />
+					<span>微信</span>
+					<div class="shareType">1</div>
+				</a>
+				<a class="ho_in" >
+					<img src="images/h5_icon_qq.png" alt="" />
+					<span>QQ</span>
+					<div class="shareType">3</div>
+				</a>
+				<a class="ho_in" >
+					<img src="images/h5_icon_weibo.png" alt="" />
+					<span>新浪微博</span>
+					<div class="shareType">4</div>
+				</a>
+			</div>
+			<div class="alt-bottom" onclick="hidediv(this)">取消</div>
+		</div>
+	
+		<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="js/utf.js"></script>
+		<script type="text/javascript" src="js/jquery.qrcode.js"></script>
+		<script type="text/javascript" src="js/url.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.cookie.js" ></script>
+		
+		<script type="text/javascript">
+		
+		function getQueryString(name) {
+		    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+		    var r = window.location.search.substr(1).match(reg);
+				if (r != null) {
+				    return unescape(r[2]);
+				}
+			    return null;
+		}
+
+		var token = getQueryString("token");
+		var inviteId = '';
+		if(token != null && token != undefined && token != '') {
+			var inviteId = '';
+			xList();
+			var login = true;
+			$('.xia').css('display','block')
+		}else {
+			var login = false;
+			$('.xia').css('display','none')
+		}
+
+		function xList(){	
+			$.ajax({
+				type: "get",
+				url: url + "/ucenter/user/getInviteUser.json",
+				async:false,
+				beforeSend: function(xhr) {
+				xhr.setRequestHeader("Authorization", token);
+				},
+				success: function(data) {
+					console.log(data);
+					$('.code').html(data.data.code);
+					$('.num').html(data.data.count);
+					inviteId=data.data.code;
+					if(data.data.user.length==0){
+							$('.main_center_1').html('<div class="zan">暂无相关记录</div>');
+							$('.xia').css('display','none');
+					}else if(data.data.user.length>6){
+						for(var i=0;i<data.data.user.length;i++){
+							var user1 ='<span>尾号'+data.data.user[i]+'</span>'
+							$('.main_center_1').append(user1);
+							$('.main_center a').css('display','block');
+							ready()
+						}
+					}else if(data.data.user.length<=6){
+						for(var i=0;i<data.data.user.length;i++){
+							var user1 ='<span>尾号'+data.data.user[i]+'</span>'
+							$('.main_center_1').append(user1);
+							$('.xia').css('display','none');
+						}
+					}
+					qrcode();
+				}
+			})
+		}	
+		
+		function ready() {
+			$(".xia").click(function() {
+				var text = $('.main_center_1').height();
+				if(text<=150){
+					$(".text,.main_center_1").animate({height:'3rem'},100); 
+			        $(this).html('<img src="images/h5_icon_arrow_u.png"/>');
+			        $('.main_center_1 span').eq(9).html('......');
+			        $('.xia').css('bottom','-5%');
+				}else{
+					$(".text,.main_center_1").animate({height:'1rem'},100); 
+			        $(this).html('<img src="images/h5_icon_arrow_d.png"/>');
+			        $('.xia').css('bottom','-10%');
+				}
+		    });
+		}
+
+		function showdiv() {
+			$('.alt,#zhezhao').show();
+            $('body').css("overflow", "hidden");
+	    }
+	
+    	function hidediv() {
+			$('.alt,#zhezhao').hide();
+        	$('body').css("overflow", "auto");
+    	}
+
+		//二维码
+		function qrcode(){
+    		$("#qrcodeCanvas").qrcode({  
+	        	render : "canvas",    //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好  
+	        	text : 'https://h5.doforest.com/register.html?invite=' + inviteId,
+    		})
+		}
+		
+		//分享
+		$('.ho_in').click(function() {
+			if(login) {
+				var type = $(this).children('.shareType').html();
+				var shareUrl = 'https://h5.doforest.com/register.html';
+				var share = '{"shareUrl":"' + shareUrl + '","sharePic":"https://images.doforest.com/h5_pic.png","shareTitle":"【点林】好友邀你一起来玩点林…","shareSubTitle":"养一片林，收健康水果，享绿色收益，为扶贫助力","type":"' + type + '"}';
+				$(this).attr('href', 'tel:' + share);
+				console.log(share);
+			} else {
+				$(this).attr('href', 'tel:login')
+			}
+		})
+		
+		
+        //获取网页中的canvas对象
+        var mycanvas1=document.getElementsByTagName('canvas')[0];
+        mycanvas1.style.display = 'none'//隐藏生成的canvas
+        //将转换后的img标签插入到html中
+        var img=convertCanvasToImage(mycanvas1);
+ 
+        $('#qrcodeCanvas').append(img);//imagQrDiv表示你要插入的容器id
+ 
+        //从 canvas 提取图片 image
+        function convertCanvasToImage(canvas) {
+            //新Image对象，可以理解为DOM
+            var image = new Image();
+            // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+            // 指定格式 PNG
+            image.src = canvas.toDataURL("image/png");
+            return image;
+
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,161 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0 none;
+	font-size: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	max-height: 100000px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+	line-height: 1;
+	color: #4D4D4D;
+	background-color: #FFD586;
+	font-size: 0.28rem;
+	position: relative;
+}
+
+.bannerimg{
+	width: 92%;
+	margin: 0.2rem auto;
+	
+}
+
+.bottom{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:0 0.35rem;
+	padding-bottom: 0.4rem;
+}
+
+.bottom img{
+	width: 0.28rem;
+}
+
+.bottom div:nth-of-type(2){
+	display: flex;
+}
+
+#letede{
+	width: 6rem;
+	height: 4rem;
+	background-color: #fff;
+	padding: 0 0.75rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius:10px;
+	display: none;
+	z-index: 999;
+}
+
+#letede h1{
+	padding-top: 0.5rem;
+	text-align: center;
+	font-size: 0.34rem;
+	font-weight: bold;
+	padding-bottom: 0.3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#letede p{
+	font-size: 0.3rem;
+	line-height: 0.4rem;
+}
+
+#letede a{
+	width: 2rem;
+	height: 0.9rem;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius:5px;
+	margin-top: 0.4rem;
+	
+}
+
+.dele{
+	display: none;
+}
+
+.anniu{
+	overflow: hidden;
+	display: flex;
+	justify-content: space-around;
+}
+
+.NO{
+	border: solid #999 1px;
+	color: #999;
+}
+
+.YES{
+	border: solid #999 1px;
+	background:rgba(252,149,66,1);
+	color: #fff;
+}

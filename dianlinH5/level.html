@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>等级制度</title>
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
+
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/level.css" />
+	</head>
+	<body>
+		<div id="top">
+			<div class="abs">我的等级</div>
+			<img  class="nowImg"/>
+			<p class="level"></p>
+		</div>
+		<div id="center">
+			<h1>勋章等级</h1>
+			<div class="medal">
+				<div class="medals">
+					<img  class="lv nowImg"/>
+					<p class="now"></p>
+					<p class="lvs"></p>
+				</div>
+				<img src="images/green_icon_arrow_right.png" class="border"/>
+				<div class="medals">
+					<img src="images/lv.png" class="lv nowImg1" />
+					<p class="now1"></p>
+					<p class="lvs1"></p>
+					
+				</div>
+				<img src="images/green_icon_arrow_right.png" class="border"/>
+				
+				<div class="medals">
+					<img  class="lv nowImg2"/>
+					<p class="now2"></p>
+					<p class="lvs2"></p>
+					
+				</div>
+				<img src="images/green_icon_arrow_right.png" class="border"/>
+				<div class="medals">
+					<img  class="lv nowImg3"/>
+					<p  class="now3"></p>
+					<p class="lvs3"></p>
+					
+				</div>
+			</div>
+			<h1 style="margin-top: 0.5rem;">级别规则</h1>
+			<div class="head tr">
+				<div>等级</div>
+				<div>所需点数</div>
+			</div>
+			<div class="tr">
+				<div>Lv1</div>
+				<div>0～100</div>
+			</div>
+			<div class="tr">
+				<div>Lv2</div>
+				<div>101～500</div>
+			</div>
+			<div class="tr">
+				<div>Lv3</div>
+				<div>501 ～ 1,200</div>
+			</div>
+			<div class="tr">
+				<div>Lv4</div>
+				<div>1,201 ～ 3,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv5</div>
+				<div>3,001 ～ 5,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv6</div>
+				<div>5,001 ～ 8,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv7</div>
+				<div>8,001 ～ 12,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv8</div>
+				<div>12,001 ～ 20,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv9</div>
+				<div>20,001 ～ 30,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv10</div>
+				<div>30,001 ～ 50,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv11</div>
+				<div>50,001 ～ 80,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv12</div>
+				<div>80,001 ～ 120,000</div>
+			</div>
+			<div class="tr">
+				<div>Lv13</div>
+				<div>120,001～ 200,000</div>
+			</div>
+			<div class="tr bottom">
+				<div>Lv14</div>
+				<div>200,001 ～ 999999999</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/lib/jquery-1.9.0.min.js" ></script>
+<script>
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	var lv = getQueryString("lv");
+	$('.level').html('Lv'+parseInt(lv));
+	var level= ['雇农','贫农','中农' ,'富农' , '庄主'  ,'见习卫士'  ,'初级卫士'  ,'高级卫士' , '见习使者' , '初级使者' , '高级使者' , '初级圣使' , '高级圣使','护林神']
+	$('.now').html(level[lv-1]);
+	$('.now1').html(level[lv]);
+	$('.now2').html(level[parseInt(lv)+1]);
+	$('.now3').html(level[parseInt(lv)+2]);
+	$('.lvs').html('Lv'+lv);
+	$('.lvs1').html('Lv'+(parseInt(lv)+1));
+	$('.lvs2').html('Lv'+(parseInt(lv)+2));
+	$('.lvs3').html('Lv'+(parseInt(lv)+3));
+	$('.nowImg').attr('src','images/level/a'+lv+'.png')
+	$('.nowImg1').attr('src','images/level/b'+(parseInt(lv)+1)+'.png')
+	$('.nowImg2').attr('src','images/level/b'+(parseInt(lv)+2)+'.png')
+	$('.nowImg3').attr('src','images/level/b'+(parseInt(lv)+3)+'.png')
+</script>
